@@ -55,6 +55,8 @@
     <Content Include="NHibernate\Iesi.Collections.dll" />
     <Content Include="NHibernate\NHibernate.dll" />
     <Content Include="NHibernate\Remotion.Data.Linq.dll" />
+    <Content Include="NUnit\nunit.core.dll" />
+    <Content Include="NUnit\nunit.framework.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -41,7 +41,7 @@ namespace BusinessLayer.Domain
             set { this.date = value; }
         }
 
-        public virtual ISet<User> Votess
+        public virtual ISet<User> Votes
         {
             get { return this.votes; }
 
