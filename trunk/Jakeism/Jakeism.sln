@@ -3,10 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jakeism", "Jakeism\Jakeism.csproj", "{AACDDE00-784F-4038-B8D2-03C33407B811}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{3DCED247-8C07-4FAF-80CC-D08DA7115CDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dependencies", "Dependencies\Dependencies.csproj", "{7DBC436B-630B-49E0-BFBF-E82257793AD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{AABB5C14-DA97-40CE-91AC-79BAB0BB6DC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1C867F0D-849F-42B2-A624-9D7ED0FA35B4}"
+	ProjectSection(SolutionItems) = preProject
+		Jakeism.vsmdi = Jakeism.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
 		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Jakeism.vsmdi
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +33,18 @@ Global
 		{AACDDE00-784F-4038-B8D2-03C33407B811}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AACDDE00-784F-4038-B8D2-03C33407B811}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AACDDE00-784F-4038-B8D2-03C33407B811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DCED247-8C07-4FAF-80CC-D08DA7115CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DCED247-8C07-4FAF-80CC-D08DA7115CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DCED247-8C07-4FAF-80CC-D08DA7115CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DCED247-8C07-4FAF-80CC-D08DA7115CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DBC436B-630B-49E0-BFBF-E82257793AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DBC436B-630B-49E0-BFBF-E82257793AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DBC436B-630B-49E0-BFBF-E82257793AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DBC436B-630B-49E0-BFBF-E82257793AD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AABB5C14-DA97-40CE-91AC-79BAB0BB6DC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AABB5C14-DA97-40CE-91AC-79BAB0BB6DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AABB5C14-DA97-40CE-91AC-79BAB0BB6DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AABB5C14-DA97-40CE-91AC-79BAB0BB6DC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
