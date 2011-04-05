@@ -3,10 +3,14 @@
                    assembly="BusinessLayer"
                    namespace="BusinessLayer.Domain">
 
-  <class name="Comment" table="TABLE NAME HERE">
+  <class name="Comment" table="JAKEISM_COMMENT">
     <id name="Id" column="COMMENT_ID" type="Guid">
       <generator class="guid" />
     </id>
+    <many-to-one name="Entry" class="Entry" column="ENTRY_ID" cascade="none" />
+    <property name="CommentBody" />
+    <many-to-one name="Usr" class="User" column="USER_ID" cascade="none" />
+    <property name="Date" type="DateTime" />
   </class>
 
 </hibernate-mapping>
