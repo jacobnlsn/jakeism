@@ -10,7 +10,7 @@
     <property name="EntryBody" />
     <many-to-one name="Usr" class="User" column="USER_ID" cascade="none" />
     <property name="Date" type="DateTime" />
-    <set name="Votes" table="DBMON_VOTES" cascade="none"  >
+    <set name="Votes" table="JAKEISM_VOTES" cascade="none"  >
       <key column="ENTRY_ID" />
       <many-to-many class="User" column="USER_ID" />
     </set>
