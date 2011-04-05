@@ -92,9 +92,9 @@
     <Compile Include="Util\Util.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Domain\Comment.hbm.xml" />
-    <Content Include="Domain\Entry.hbm.xml" />
-    <Content Include="Domain\User.hbm.xml" />
+    <EmbeddedResource Include="Domain\Comment.hbm.xml" />
+    <EmbeddedResource Include="Domain\Entry.hbm.xml" />
+    <EmbeddedResource Include="Domain\User.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
