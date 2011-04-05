@@ -9,7 +9,6 @@ namespace BusinessLayer.API
 {
     public class JakeismAPI
     {
-        private HibernateService HibernateService;
-
+ 
     }
 }

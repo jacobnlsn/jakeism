@@ -8,12 +8,6 @@ namespace BusinessLayer.Service
 {
     public interface IHibernateService : IDisposable
     {
-        void Dispose();
-
-        void Open();
-
-        void Close();
-
         #region Persistence
 
         void Save(DomainBase entity);
@@ -23,6 +17,5 @@ namespace BusinessLayer.Service
         void Delete(DomainBase entity);
 
         #endregion
-
     }
 }
