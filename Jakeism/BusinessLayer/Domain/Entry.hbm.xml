@@ -3,10 +3,17 @@
                    assembly="BusinessLayer"
                    namespace="BusinessLayer.Domain">
 
-  <class name="Entry" table="TABLE NAME HERE">
+  <class name="Entry" table="JAKEISM_ENTRY">
     <id name="Id" column="ENTRY_ID" type="Guid">
       <generator class="guid" />
     </id>
+    <property name="EntryBody" />
+    <many-to-one name="Usr" class="User" column="USER_ID" cascade="none" />
+    <property name="Date" type="DateTime" />
+    <set name="Votes" table="DBMON_VOTES" cascade="none"  >
+      <key column="ENTRY_ID" />
+      <many-to-many class="User" column="USER_ID" />
+    </set>
   </class>
 
 </hibernate-mapping>
