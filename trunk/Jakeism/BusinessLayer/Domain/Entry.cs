@@ -9,7 +9,7 @@ namespace BusinessLayer.Domain
     {
         private string entryBody;
 
-        private User usr;
+        private User user;
 
         private DateTime date;
 
@@ -23,28 +23,24 @@ namespace BusinessLayer.Domain
         public virtual string EntryBody
         {
             get { return this.entryBody; }
-
             set { this.entryBody = value; }
         }
 
-        public virtual User Usr
+        public virtual User User
         {
-            get { return this.usr; }
-
-            set { this.usr = value; }
+            get { return this.user; }
+            set { this.user = value; }
         }
 
         public virtual DateTime Date
         {
             get { return this.date; }
-
             set { this.date = value; }
         }
 
         public virtual ISet<User> Votes
         {
             get { return this.votes; }
-
             set { this.votes = value; }
         }
 
