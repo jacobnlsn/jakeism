@@ -33,7 +33,7 @@ namespace UnitTests
             cfg.AddAssembly(typeof(User).Assembly);
 
             var schemaExport = new SchemaExport(cfg);
-            schemaExport.SetOutputFile("c:/db_monitor.sql");
+            schemaExport.SetOutputFile(@"C:\New folder\jakeism.sql");
             schemaExport.Create(true, true);
         }
     }

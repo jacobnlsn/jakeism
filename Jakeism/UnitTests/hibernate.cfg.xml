@@ -1,0 +1,14 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+
+<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+  <session-factory name="Jakeism.UnitTests">
+    <property name="connection.driver_class">NHibernate.Driver.MySqlDataDriver</property>
+    <property name="connection.connection_string">User ID=ttreat;Password=jakeismdev;Data Source=my01.winhost.com;Database=mysql_18514_jakeism</property>
+    <property name="show_sql">true</property>
+    <property name="dialect">NHibernate.Dialect.MySQLDialect</property>
+    <property name="query.substitutions">true 1, false 0, yes 'Y', no 'N'</property>
+    <property name="proxyfactory.factory_class">NHibernate.ByteCode.LinFu.ProxyFactoryFactory, NHibernate.ByteCode.LinFu</property>
+    <property name="current_session_context_class">web</property>
+    <mapping assembly="BusinessLayer" />
+  </session-factory>
+</hibernate-configuration>

@@ -4,16 +4,21 @@
                    namespace="BusinessLayer.Domain">
 
   <class name="Entry" table="JAKEISM_ENTRY">
-    <id name="Id" column="ENTRY_ID" type="Guid">
-      <generator class="guid" />
+    
+    <id name="Id" column="ENTRY_ID">
+      <generator class="increment" />
     </id>
+    
     <property name="EntryBody" />
-    <many-to-one name="Usr" class="User" column="USER_ID" cascade="none" />
     <property name="Date" type="DateTime" />
+    
+    <many-to-one name="User" class="User" column="USER_ID" cascade="none" />
+    
     <set name="Votes" table="JAKEISM_VOTES" cascade="none"  >
       <key column="ENTRY_ID" />
       <many-to-many class="User" column="USER_ID" />
     </set>
+    
   </class>
 
 </hibernate-mapping>

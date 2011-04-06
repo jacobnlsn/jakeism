@@ -11,7 +11,7 @@ namespace BusinessLayer.Domain
 
         private string password;
 
-        private Boolean isAdmin;
+        private bool isAdmin;
 
         private ISet<Entry> votes;
 
@@ -23,28 +23,24 @@ namespace BusinessLayer.Domain
         public virtual string UserName
         {
             get { return this.userName; }
-
             set { this.userName = value; }
         }
 
         public virtual string Password
         {
             get { return this.password; }
-
             set { this.password = value; }
         }
 
         public virtual Boolean IsAdmin
         {
             get { return this.isAdmin; }
-
             set { this.isAdmin = value; }
         }
 
         public virtual ISet<Entry> Votes
         {
             get { return this.votes; }
-
             set { this.votes = value; }
         }
     }

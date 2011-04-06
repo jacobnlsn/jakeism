@@ -11,35 +11,31 @@ namespace BusinessLayer.Domain
 
         private string commentBody;
 
-        private User usr;
+        private User user;
 
         private DateTime date;
 
         public virtual Entry Entry
         {
             get { return this.entry; }
-
             set { this.entry = value; }
         }
 
         public virtual string CommentBody
         {
             get { return this.commentBody; }
-
             set { this.commentBody = value; }
         }
 
-        public virtual User Usr
+        public virtual User User
         {
-            get { return this.usr; }
-
-            set { this.usr = value; }
+            get { return this.user; }
+            set { this.user = value; }
         }
 
         public virtual DateTime Date
         {
             get { return this.date; }
-
             set { this.date = value; }
         }
 

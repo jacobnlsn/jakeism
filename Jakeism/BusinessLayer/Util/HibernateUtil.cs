@@ -27,5 +27,10 @@ namespace BusinessLayer.Util
         {
             return SessionFactory;
         }
+
+        public static Configuration GetConfiguration()
+        {
+            return new Configuration().Configure();
+        }
     }
 }
