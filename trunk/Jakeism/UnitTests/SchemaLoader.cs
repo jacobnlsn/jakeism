@@ -19,19 +19,7 @@ namespace UnitTests
         [Test]
         public void ReloadSchema()
         {
-            var cfg = new Configuration();
-            IDictionary<string, string> props = new Dictionary<string, string>();
-            props.Add("connection.provider", "NHibernate.Connection.DriverConnectionProvider");
-            props.Add("dialect", "NHibernate.Dialect.MySQLDialect");
-            props.Add("connection.driver_class", "NHibernate.Driver.MySqlDataDriver");
-            props.Add("connection.connection_string", "User ID=ttreat;Password=jakeismdev;Data Source=my01.winhost.com;Database=mysql_18514_jakeism");
-
-            // Does not contain correct connection string because we do not want to reload the schema on
-            // the production database.
-
-            cfg.AddProperties(props);
-            cfg.AddAssembly(typeof(User).Assembly);
-
+            var cfg = new Configuration().Configure();
             var schemaExport = new SchemaExport(cfg);
             schemaExport.SetOutputFile(@"C:\New folder\jakeism.sql");
             schemaExport.Create(true, true);

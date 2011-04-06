@@ -13,6 +13,8 @@ namespace BusinessLayer.Domain
 
         private bool isAdmin;
 
+        private DateTime dateRegistered;
+
         private ISet<Entry> votes;
 
         public User()
@@ -36,6 +38,12 @@ namespace BusinessLayer.Domain
         {
             get { return this.isAdmin; }
             set { this.isAdmin = value; }
+        }
+
+        public virtual DateTime DateRegistered
+        {
+            get { return this.dateRegistered; }
+            set { this.dateRegistered = value; }
         }
 
         public virtual ISet<Entry> Votes
