@@ -1,5 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 
+<!-- NHibernate configuration for unit test environment -->
+
 <hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
   <session-factory name="Jakeism.UnitTests">
     <property name="connection.driver_class">NHibernate.Driver.MySqlDataDriver</property>
