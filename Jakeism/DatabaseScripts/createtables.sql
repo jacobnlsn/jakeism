@@ -33,6 +33,7 @@ alter table JAKEISM_ENTRY  drop foreign key FKC089485D1586C1A0;
        UserName VARCHAR(255),
        Password VARCHAR(255),
        IsAdmin TINYINT(1),
+       DateRegistered DATETIME,
        primary key (USER_ID)
     );
 

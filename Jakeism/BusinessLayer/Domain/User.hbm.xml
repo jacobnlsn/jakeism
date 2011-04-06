@@ -12,6 +12,7 @@
     <property name="UserName" />
     <property name="Password" />
     <property name="IsAdmin" type="Boolean" />
+    <property name="DateRegistered" type="DateTime" />
     
     <set name="Votes" table="JAKEISM_VOTES" cascade="none" inverse="true" >
       <key column="USER_ID" />
