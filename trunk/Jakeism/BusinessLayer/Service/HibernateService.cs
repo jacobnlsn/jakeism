@@ -51,5 +51,10 @@ namespace BusinessLayer.Service
 
         #endregion
 
+        public IList<DomainBase> GetAllRecords(Type type)
+        {
+            return HibernateDAO.GetAllRecords(type);
+        }
+
     }
 }

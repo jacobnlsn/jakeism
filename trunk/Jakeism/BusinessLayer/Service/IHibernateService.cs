@@ -17,5 +17,7 @@ namespace BusinessLayer.Service
         void Delete(DomainBase entity);
 
         #endregion
+
+        IList<DomainBase> GetAllRecords(Type type);
     }
 }

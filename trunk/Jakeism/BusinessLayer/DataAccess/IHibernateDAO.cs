@@ -20,5 +20,7 @@ namespace BusinessLayer.DataAccess
 
         #endregion
 
+        IList<DomainBase> GetAllRecords(Type type);
+
     }
 }

@@ -55,5 +55,11 @@ namespace BusinessLayer.DataAccess
         }
 
         #endregion
+
+        public IList<DomainBase> GetAllRecords(Type type)
+        {
+            string query = "from " + type.Name;
+            return Session.CreateQuery(query).List<DomainBase>();
+        }
     }
 }
