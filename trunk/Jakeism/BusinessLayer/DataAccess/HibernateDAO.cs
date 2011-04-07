@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using NHibernate;
 using NHibernate.Criterion;
+using NHibernate.Loader;
 using BusinessLayer.Domain;
 using BusinessLayer.Util;
+using NHibernate.Mapping;
 
 namespace BusinessLayer.DataAccess
 {
