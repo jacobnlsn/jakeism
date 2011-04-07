@@ -19,6 +19,7 @@ namespace BusinessLayer.Domain
 
         public User()
         {
+            dateRegistered = DateTime.Now;
             this.votes = new HashedSet<Entry>();
         }
 
