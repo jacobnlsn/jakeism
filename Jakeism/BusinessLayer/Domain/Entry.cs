@@ -18,6 +18,7 @@ namespace BusinessLayer.Domain
         public Entry()
         {
             this.votes = new HashedSet<User>();
+            date = DateTime.Now;
         }
 
         public virtual string EntryBody
