@@ -3,7 +3,7 @@
                    assembly="BusinessLayer"
                    namespace="BusinessLayer.Domain">
 
-  <class name="Comment" table="JAKEISM_COMMENT">
+  <class name="Comment" table="JAKEISM_COMMENT" lazy="true">
 
     <id name="Id" column="COMMENT_ID">
       <generator class="increment" />
@@ -12,8 +12,8 @@
     <property name="CommentBody" />
     <property name="Date" type="DateTime" />
     
-    <many-to-one name="Entry" class="Entry" column="ENTRY_ID" cascade="none" />
-    <many-to-one name="User" class="User" column="USER_ID" cascade="none" />
+    <many-to-one name="Entry" class="Entry" column="ENTRY_ID" cascade="all" />
+    <many-to-one name="User" class="User" column="USER_ID" cascade="all" />
     
   </class>
 

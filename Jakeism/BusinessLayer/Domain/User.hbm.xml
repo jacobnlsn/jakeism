@@ -3,7 +3,7 @@
                    assembly="BusinessLayer"
                    namespace="BusinessLayer.Domain">
 
-  <class name="User" table="JAKEISM_USER">
+  <class name="User" table="JAKEISM_USER" lazy="true">
 
     <id name="Id" column="USER_ID">
       <generator class="increment" />
@@ -14,8 +14,18 @@
     <property name="Email" />
     <property name="IsAdmin" type="Boolean" />
     <property name="DateRegistered" type="DateTime" />
+
+    <set name="Entries" table="JAKEISM_ENTRY" cascade="all" inverse="true" >
+      <key column="USER_ID" />
+      <one-to-many class="Entry" />
+    </set>
+
+    <set name="Comments" table="JAKEISM_COMMENT" cascade="all" inverse="true" >
+      <key column="USER_ID" />
+      <one-to-many class="Comment" />
+    </set>
     
-    <set name="Votes" table="JAKEISM_VOTES" cascade="none" inverse="true" >
+    <set name="Votes" table="JAKEISM_VOTES" cascade="all" inverse="true" >
       <key column="USER_ID" />
       <many-to-many class="Entry" column="ENTRY_ID" />
     </set>

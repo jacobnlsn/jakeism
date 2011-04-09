@@ -36,6 +36,8 @@ namespace BusinessLayer.DataAccess
 
         IList<Comment> GetCommentsByUser(User user);
 
+        IList<Comment> GetCommentsByEntry(Entry entry);
+
         #endregion
 
         IList<DomainBase> GetAllRecords(Type type);

@@ -10,7 +10,7 @@
 <asp:Label runat="server" ID="email" /><br />
 <asp:Label runat="server" ID="registered" /><br />
 
-<asp:Label runat="server" ID="entrieslbl" Text="<h2>Entries</h2>" />
+<asp:Label runat="server" ID="entrieslbl" Text="<h2>Jakeisms</h2>" />
 <asp:ListView runat="server" ID="entries">
         
     <LayoutTemplate>
@@ -20,7 +20,7 @@
     </LayoutTemplate>
 
     <ItemTemplate>
-        <li><a id="A1" runat='server' href='<%# String.Format("~/Entries/ViewEntry.aspx?id={0}", Eval("Id")) %>'><%# Eval("Title") %></a></li>
+        <li><a id="A1" runat='server' href='<%# String.Format("~/Entries/ViewEntry.aspx?id={0}", Eval("Id")) %>'><%# Eval("EntryBody") %></a></li>
     </ItemTemplate>
 
     <EmptyDataTemplate>
@@ -39,7 +39,7 @@
     </LayoutTemplate>
 
     <ItemTemplate>
-        <li><a id="A1" runat='server' href='<%# String.Format("~/Entries/ViewEntry.aspx?id={0}&cid={1}", Eval("EntryId"), Eval("CommentId")) %>'><%# Eval("CommentBody") %></a></li>
+        <li><a id="A1" runat='server' href='<%# String.Format("~/Entries/ViewEntry.aspx?id={0}#comment-{1}", Eval("Entry.Id"), Eval("Id")) %>'><%# Eval("CommentBody") %></a></li>
     </ItemTemplate>
 
     <EmptyDataTemplate>
