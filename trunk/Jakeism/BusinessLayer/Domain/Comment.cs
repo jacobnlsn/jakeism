@@ -15,6 +15,11 @@ namespace BusinessLayer.Domain
 
         private DateTime date;
 
+        public Comment()
+        {
+            date = DateTime.Now;
+        }
+
         public virtual Entry Entry
         {
             get { return this.entry; }
