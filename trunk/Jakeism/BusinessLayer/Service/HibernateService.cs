@@ -51,6 +51,39 @@ namespace BusinessLayer.Service
 
         #endregion
 
+        #region Searching
+
+        public DomainBase FindById(long id, Type type)
+        {
+            return HibernateDAO.FindById(id, type);
+        }
+
+        public T FindById<T>(long id) where T : DomainBase
+        {
+            return HibernateDAO.FindById<T>(id);
+        }
+
+        public User FindUserByUserName(string username)
+        {
+            return HibernateDAO.FindUserByUserName(username);
+        }
+
+        #endregion
+
+        #region Relationships
+
+        public IList<Entry> GetEntriesByUser(User user)
+        {
+            return HibernateDAO.GetEntriesByUser(user);
+        }
+
+        public IList<Comment> GetCommentsByUser(User user)
+        {
+            return HibernateDAO.GetCommentsByUser(user);
+        }
+
+        #endregion
+
         public IList<DomainBase> GetAllRecords(Type type)
         {
             return HibernateDAO.GetAllRecords(type);

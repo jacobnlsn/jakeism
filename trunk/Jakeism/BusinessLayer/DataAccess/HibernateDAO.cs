@@ -58,6 +58,49 @@ namespace BusinessLayer.DataAccess
 
         #endregion
 
+        #region Searching
+
+        public DomainBase FindById(long id, Type type)
+        {
+            return Session.CreateCriteria(type)
+                .Add(Restrictions.Eq("Id", id))
+                .UniqueResult<DomainBase>();
+        }
+
+        public T FindById<T>(long id) where T : DomainBase
+        {
+            return Session.CreateCriteria<T>()
+                .Add(Restrictions.Eq("Id", id))
+                .UniqueResult<T>();
+        }
+
+        public User FindUserByUserName(string username)
+        {
+            return Session.CreateCriteria<User>()
+                .Add(Restrictions.Eq("UserName", username))
+                .UniqueResult<User>();
+        }
+
+        #endregion
+
+        #region Relationships
+
+        public IList<Entry> GetEntriesByUser(User user)
+        {
+            return Session.CreateCriteria<Entry>()
+                .Add(Restrictions.Eq("User", user))
+                .List<Entry>();
+        }
+
+        public IList<Comment> GetCommentsByUser(User user)
+        {
+            return Session.CreateCriteria<Comment>()
+                .Add(Restrictions.Eq("User", user))
+                .List<Comment>();
+        }
+
+        #endregion
+
         public IList<DomainBase> GetAllRecords(Type type)
         {
             string query = "from " + type.Name;

@@ -20,6 +20,24 @@ namespace BusinessLayer.DataAccess
 
         #endregion
 
+        #region Searching
+
+        DomainBase FindById(long id, Type type);
+
+        T FindById<T>(long id) where T : DomainBase;
+
+        User FindUserByUserName(string username);
+
+        #endregion
+
+        #region Relationships
+
+        IList<Entry> GetEntriesByUser(User user);
+
+        IList<Comment> GetCommentsByUser(User user);
+
+        #endregion
+
         IList<DomainBase> GetAllRecords(Type type);
 
     }
