@@ -17,11 +17,16 @@ namespace BusinessLayer.Domain
 
         private DateTime dateRegistered;
 
+        private ISet<Entry> entries;
+
+        private ISet<Comment> comments;
+
         private ISet<Entry> votes;
 
         public User()
         {
             dateRegistered = DateTime.Now;
+            this.entries = new HashedSet<Entry>();
             this.votes = new HashedSet<Entry>();
         }
 
@@ -53,6 +58,18 @@ namespace BusinessLayer.Domain
         {
             get { return this.dateRegistered; }
             set { this.dateRegistered = value; }
+        }
+
+        public virtual ISet<Entry> Entries
+        {
+            get { return this.entries; }
+            set { this.entries = value; }
+        }
+
+        public virtual ISet<Comment> Comments
+        {
+            get { return this.comments; }
+            set { this.comments = value; }
         }
 
         public virtual ISet<Entry> Votes

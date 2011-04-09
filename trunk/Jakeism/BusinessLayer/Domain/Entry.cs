@@ -13,6 +13,8 @@ namespace BusinessLayer.Domain
 
         private DateTime date;
 
+        private ISet<Comment> comments;
+
         private ISet<User> votes;
 
         public Entry()
@@ -37,6 +39,12 @@ namespace BusinessLayer.Domain
         {
             get { return this.date; }
             set { this.date = value; }
+        }
+
+        public virtual ISet<Comment> Comments
+        {
+            get { return this.comments; }
+            set { this.comments = value; }
         }
 
         public virtual ISet<User> Votes

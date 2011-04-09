@@ -14,7 +14,11 @@ namespace Jakeism
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            using (var service = new HibernateService())
+            {
+                entries.DataSource = service.GetAllRecords(typeof(Entry)).Reverse();
+                entries.DataBind();
+            }
         }
 
     }

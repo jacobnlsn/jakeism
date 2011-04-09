@@ -99,6 +99,13 @@ namespace BusinessLayer.DataAccess
                 .List<Comment>();
         }
 
+        public IList<Comment> GetCommentsByEntry(Entry entry)
+        {
+            return Session.CreateCriteria<Comment>()
+                .Add(Restrictions.Eq("Entry", entry))
+                .List<Comment>();
+        }
+
         #endregion
 
         public IList<DomainBase> GetAllRecords(Type type)

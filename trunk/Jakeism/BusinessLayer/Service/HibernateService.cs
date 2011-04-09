@@ -82,6 +82,11 @@ namespace BusinessLayer.Service
             return HibernateDAO.GetCommentsByUser(user);
         }
 
+        public IList<Comment> GetCommentsByEntry(Entry entry)
+        {
+            return HibernateDAO.GetCommentsByEntry(entry);
+        }
+
         #endregion
 
         public IList<DomainBase> GetAllRecords(Type type)
