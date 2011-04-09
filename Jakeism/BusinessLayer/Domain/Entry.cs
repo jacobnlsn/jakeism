@@ -50,7 +50,7 @@ namespace BusinessLayer.Domain
             this.votes.Add(vote);
         }
 
-        public virtual string ToString()
+        public override string ToString()
         {
             return this.entryBody;
         }

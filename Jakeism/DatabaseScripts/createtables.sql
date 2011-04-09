@@ -1,4 +1,3 @@
-/* Rebuilds the Jakeism schema */
 
     
 alter table JAKEISM_VOTES  drop foreign key FK1C4861145249FCD6;
@@ -32,6 +31,7 @@ alter table JAKEISM_ENTRY  drop foreign key FKC089485D1586C1A0;
         USER_ID BIGINT not null,
        UserName VARCHAR(255),
        Password VARCHAR(255),
+       Email VARCHAR(255),
        IsAdmin TINYINT(1),
        DateRegistered DATETIME,
        primary key (USER_ID)

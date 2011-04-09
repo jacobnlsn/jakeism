@@ -11,6 +11,8 @@ namespace BusinessLayer.Domain
 
         private string password;
 
+        private string emailAddress;
+
         private bool isAdmin;
 
         private DateTime dateRegistered;
@@ -33,6 +35,12 @@ namespace BusinessLayer.Domain
         {
             get { return this.password; }
             set { this.password = value; }
+        }
+
+        public virtual string Email
+        {
+            get { return this.emailAddress; }
+            set { this.emailAddress = value; }
         }
 
         public virtual Boolean IsAdmin

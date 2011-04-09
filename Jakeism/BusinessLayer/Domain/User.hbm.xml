@@ -11,6 +11,7 @@
     
     <property name="UserName" />
     <property name="Password" />
+    <property name="Email" />
     <property name="IsAdmin" type="Boolean" />
     <property name="DateRegistered" type="DateTime" />
     
