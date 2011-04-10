@@ -7,37 +7,46 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Jakeism.Entries {
+namespace Jakeism.Admin {
     
     
-    public partial class CreateEntry {
+    public partial class Default {
         
         /// <summary>
-        /// loggedOut control.
+        /// loginPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel loggedOut;
+        protected global::System.Web.UI.WebControls.Panel loginPanel;
         
         /// <summary>
-        /// createPanel control.
+        /// login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel createPanel;
+        protected global::System.Web.UI.WebControls.Label login;
         
         /// <summary>
-        /// entryBody control.
+        /// usernameField control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox entryBody;
+        protected global::System.Web.UI.WebControls.TextBox usernameField;
+        
+        /// <summary>
+        /// passwordField control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox passwordField;
         
         /// <summary>
         /// fail control.
@@ -56,5 +65,14 @@ namespace Jakeism.Entries {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit;
+        
+        /// <summary>
+        /// adminPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel adminPanel;
     }
 }

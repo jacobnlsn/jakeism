@@ -56,6 +56,15 @@ namespace BusinessLayer.DataAccess
             }
         }
 
+        public void Delete(long id, Type type)
+        {
+            using (ITransaction tx = Session.BeginTransaction())
+            {
+                Session.Delete(string.Format("from {0} where id = {1}", type, id));
+                tx.Commit();
+            }
+        }
+
         #endregion
 
         #region Searching
@@ -112,6 +121,12 @@ namespace BusinessLayer.DataAccess
         {
             string query = "from " + type.Name;
             return Session.CreateQuery(query).List<DomainBase>();
+        }
+
+        public IList<T> GetAllRecords<T>() where T : DomainBase
+        {
+            ICriteria criteria = Session.CreateCriteria<T>();
+            return criteria.List<T>();
         }
     }
 }

@@ -47,9 +47,9 @@ namespace Jakeism.Users
                     email.Text = "Email: " + DomainUser.Email;
                     registered.Text = "Registered: " + DomainUser.DateRegistered;
                     userTitle.Text = DomainUser.UserName;
-                    entries.DataSource = service.GetEntriesByUser(DomainUser);
+                    entries.DataSource = service.GetEntriesByUser(DomainUser).Reverse();
                     entries.DataBind();
-                    comments.DataSource = service.GetCommentsByUser(DomainUser);
+                    comments.DataSource = service.GetCommentsByUser(DomainUser).Reverse();
                     comments.DataBind();
                 }
             }

@@ -58,7 +58,14 @@ namespace Jakeism.Entries
         {
             if (String.IsNullOrEmpty(commentBox.Text.Trim()))
             {
-                emptyComment.Visible = true;
+                fail.Text = "Comment may not be empty";
+                fail.Visible = true;
+                return;
+            }
+            if (commentBox.Text.Trim().Length > 255)
+            {
+                fail.Text = "Comment may not exceed 255 characters";
+                fail.Visible = true;
                 return;
             }
             using (var service = new HibernateService())

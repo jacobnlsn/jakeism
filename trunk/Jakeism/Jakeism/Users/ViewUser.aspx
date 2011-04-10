@@ -14,13 +14,12 @@
 <asp:ListView runat="server" ID="entries">
         
     <LayoutTemplate>
-        <ul>
-            <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
-        </ul>
+        <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
     </LayoutTemplate>
 
     <ItemTemplate>
-        <li><a id="A1" runat='server' href='<%# String.Format("~/Entries/ViewEntry.aspx?id={0}", Eval("Id")) %>'><%# Eval("EntryBody") %></a></li>
+        <a runat='server' href='<%# String.Format("~/Entries/ViewEntry.aspx?id={0}", Eval("Id")) %>'>Jakeism #<%# Eval("Id") %></a><br />
+        <%# Eval("EntryBody") %><br /><br />
     </ItemTemplate>
 
     <EmptyDataTemplate>
@@ -33,13 +32,12 @@
 <asp:ListView runat="server" ID="comments">
         
     <LayoutTemplate>
-        <ul>
-            <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
-        </ul>
+        <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
     </LayoutTemplate>
 
     <ItemTemplate>
-        <li><a id="A1" runat='server' href='<%# String.Format("~/Entries/ViewEntry.aspx?id={0}#comment-{1}", Eval("Entry.Id"), Eval("Id")) %>'><%# Eval("CommentBody") %></a></li>
+        <a runat='server' href='<%# String.Format("~/Entries/ViewEntry.aspx?id={0}#comment-{1}", Eval("Entry.Id"), Eval("Id")) %>'>Jakeism #<%# Eval("Entry.Id") %></a><br />
+        <%# Eval("CommentBody") %><br /><br />
     </ItemTemplate>
 
     <EmptyDataTemplate>

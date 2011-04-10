@@ -18,6 +18,8 @@ namespace BusinessLayer.DataAccess
 
         void Delete(DomainBase entity);
 
+        void Delete(long id, Type type);
+
         #endregion
 
         #region Searching
@@ -41,6 +43,8 @@ namespace BusinessLayer.DataAccess
         #endregion
 
         IList<DomainBase> GetAllRecords(Type type);
+
+        IList<T> GetAllRecords<T>() where T : DomainBase;
 
     }
 }

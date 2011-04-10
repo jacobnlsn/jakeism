@@ -49,6 +49,11 @@ namespace BusinessLayer.Service
             HibernateDAO.Delete(entity);
         }
 
+        public void Delete(long id, Type type)
+        {
+            HibernateDAO.Delete(id, type);
+        }
+
         #endregion
 
         #region Searching
@@ -92,6 +97,11 @@ namespace BusinessLayer.Service
         public IList<DomainBase> GetAllRecords(Type type)
         {
             return HibernateDAO.GetAllRecords(type);
+        }
+
+        public IList<T> GetAllRecords<T>() where T : DomainBase
+        {
+            return HibernateDAO.GetAllRecords<T>();
         }
 
     }
