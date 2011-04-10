@@ -7,82 +7,46 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Jakeism.Entries {
+namespace Jakeism.Admin {
     
     
-    public partial class ViewEntry {
+    public partial class ManageEntries {
         
         /// <summary>
-        /// title control.
+        /// loginPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label title;
+        protected global::System.Web.UI.WebControls.Panel loginPanel;
         
         /// <summary>
-        /// body control.
+        /// login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label body;
+        protected global::System.Web.UI.WebControls.Label login;
         
         /// <summary>
-        /// postedBy control.
+        /// usernameField control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label postedBy;
+        protected global::System.Web.UI.WebControls.TextBox usernameField;
         
         /// <summary>
-        /// commentslbl control.
+        /// passwordField control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label commentslbl;
-        
-        /// <summary>
-        /// commentsList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView commentsList;
-        
-        /// <summary>
-        /// commentPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel commentPanel;
-        
-        /// <summary>
-        /// addCommentlbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label addCommentlbl;
-        
-        /// <summary>
-        /// commentBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox commentBox;
+        protected global::System.Web.UI.WebControls.TextBox passwordField;
         
         /// <summary>
         /// fail control.
@@ -101,5 +65,41 @@ namespace Jakeism.Entries {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit;
+        
+        /// <summary>
+        /// adminPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel adminPanel;
+        
+        /// <summary>
+        /// entries control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView entries;
+        
+        /// <summary>
+        /// delete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button delete;
+        
+        /// <summary>
+        /// update control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button update;
     }
 }

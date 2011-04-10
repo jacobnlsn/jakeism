@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewEntry.aspx.cs" Inherits="Jakeism.Entries.ViewEntry" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+
+    <script type="text/javascript" src="../scripts/jquery-1.4.1.js"></script>
+    <script type="text/javascript" src="../scripts/forms.js"></script>
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -33,8 +38,9 @@
 
 <asp:Panel runat="server" ID="commentPanel" Visible="false">
     <asp:Label runat="server" ID="addCommentlbl" Text="Add Comment" /><br />
-    <asp:TextBox runat="server" ID="commentBox" Width="300" Height="75" TextMode="MultiLine" /><br />
-    <asp:Label runat="server" ID="emptyComment" Visible="false" Text="Comment may not be empty" /><br />
+    <asp:TextBox runat="server" ID="commentBox" Width="300" Height="75" TextMode="MultiLine" CssClass="word_count" />
+    <br /><span class="counter"></span><br />
+    <asp:Label runat="server" ID="fail" Visible="false" /><br />
     <asp:Button runat="server" ID="submit" Text="Submit Comment" OnClick="Submit_Comment" />
 </asp:Panel>
 

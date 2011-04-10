@@ -13,6 +13,10 @@ namespace Jakeism.Entries
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
+            Response.Cache.SetNoStore();
+
             if (User.Identity.IsAuthenticated)
             {
                 loggedOut.Visible = false;
@@ -24,7 +28,14 @@ namespace Jakeism.Entries
         {
             if (String.IsNullOrEmpty(entryBody.Text.Trim()))
             {
-                noText.Visible = true;
+                fail.Text = "Entry field may not be empty";
+                fail.Visible = true;
+                return;
+            }
+            if (entryBody.Text.Trim().Length > 255)
+            {
+                fail.Text = "Entry may not exceed 255 characters";
+                fail.Visible = true;
                 return;
             }
             long id;
