@@ -25,12 +25,21 @@ namespace Jakeism.Admin
 
         protected void Delete_Entries(object sender, EventArgs e)
         {
-            // TODO
-        }
-
-        protected void Update_Entries(object sender, EventArgs e)
-        {
-            // TODO
+            List<ListViewDataItem> theEntries = (List<ListViewDataItem>)entries.Items;
+            foreach (ListViewDataItem currentEntry in theEntries)
+            {
+                CheckBox box = (CheckBox)currentEntry.FindControl("check");
+                Button button = (Button)currentEntry.FindControl("ModifyButton");
+                string id = button.CommandArgument;
+                if (box.Checked)
+                {
+                    using (var service = new HibernateService())
+                    {
+                        Entry toDelete = (Entry)service.FindById(Int64.Parse(id), typeof(Entry));
+                        service.Delete(toDelete);
+                    }
+                }
+            }
         }
 
         protected void Modify_Entry(object sender, EventArgs e)

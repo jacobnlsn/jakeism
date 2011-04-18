@@ -31,6 +31,5 @@
     </asp:ListView>
 
     <asp:Button runat="server" ID="delete" Text="Delete Selected Entries" OnClick="Delete_Entries" />
-    <asp:Button runat="server" ID="update" Text="Update Selected Entries" OnClick="Update_Entries" />
 
 </asp:Content>
