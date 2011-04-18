@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManageEntry.aspx.cs" Inherits="Jakeism.Admin.ManageEntry" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 
+    <script type="text/javascript" src="../scripts/jquery-1.4.1.js"></script>
     <script type="text/javascript" src="../scripts/forms.js"></script>
 
 </asp:Content>
