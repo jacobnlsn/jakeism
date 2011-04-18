@@ -58,7 +58,10 @@ namespace Jakeism.Admin
                 {
                     Id = entry.Id;
                     title.Text = "<h2>Jakeism #" + entry.Id + "</h2>";
-                    entryBody.Text = entry.EntryBody;
+                    if (!IsPostBack)
+                    {
+                        entryBody.Text = entry.EntryBody;
+                    }
                 }
             }
         }
@@ -93,7 +96,12 @@ namespace Jakeism.Admin
 
         protected void Modify_Entry(object sender, EventArgs e)
         {
-            // TODO
+            using (var service = new HibernateService())
+            {
+                Entry entry = (Entry)service.FindById(Id, typeof(Entry));
+                entry.EntryBody = entryBody.Text;
+                service.SaveOrUpdate(entry);
+            }
         }
 
     }
