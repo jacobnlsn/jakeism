@@ -1,20 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManageUsers.aspx.cs" Inherits="Jakeism.Admin.ManageUsers" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="ManageUsers.aspx.cs" Inherits="Jakeism.Admin.ManageUsers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<asp:Panel runat="server" ID="loginPanel">
-    <h2><asp:Label runat="server" ID="login" Text="Administrator Login" /></h2>
-    <p>Username</p>
-    <asp:TextBox runat="server" ID="usernameField" /><br />
-    <p>Password</p>
-    <asp:TextBox runat="server" ID="passwordField" TextMode="Password" />
-    <asp:Label runat="server" ID="fail" Text="Invalid username/password" Visible="false" /><br /><br />
-    <asp:Button runat="server" ID="submit" Text="Login" OnClick="Admin_Login" />
-</asp:Panel>
-
-<asp:Panel runat="server" ID="adminPanel" Visible="false">
     <p><a href="Default.aspx">admin panel</a> > manage users</p>
     <h2>Manage Users</h2>
     <br />
@@ -81,7 +70,5 @@
 
     <asp:Button runat="server" ID="delete" Text="Delete Selected Users" OnClick="Delete_Users" />
     <asp:Button runat="server" ID="update" Text="Update Selected Users" OnClick="Update_Users" />
-
-</asp:Panel>
 
 </asp:Content>
