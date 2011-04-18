@@ -90,6 +90,7 @@
     <Content Include="About.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\ManageEntries.aspx" />
+    <Content Include="Admin\ManageEntry.aspx" />
     <Content Include="Admin\ManageUsers.aspx" />
     <Content Include="Entries\CreateEntry.aspx" />
     <Content Include="Entries\Default.aspx" />
@@ -137,6 +138,13 @@
     </Compile>
     <Compile Include="Admin\ManageEntries.aspx.designer.cs">
       <DependentUpon>ManageEntries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageEntry.aspx.cs">
+      <DependentUpon>ManageEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageEntry.aspx.designer.cs">
+      <DependentUpon>ManageEntry.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ManageUsers.aspx.cs">
       <DependentUpon>ManageUsers.aspx</DependentUpon>

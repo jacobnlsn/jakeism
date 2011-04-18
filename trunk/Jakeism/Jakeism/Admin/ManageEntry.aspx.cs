@@ -4,16 +4,24 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BusinessLayer.Domain;
 using BusinessLayer.Service;
+using BusinessLayer.Domain;
 using BusinessLayer.Util;
 
 namespace Jakeism.Admin
 {
-    public partial class ManageEntries : System.Web.UI.Page
+    public partial class ManageEntry : System.Web.UI.Page
     {
+
+        protected long Id
+        {
+            get;
+            set;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
             Response.Cache.SetNoStore();
@@ -27,10 +35,30 @@ namespace Jakeism.Admin
                     if (user.IsAdmin)
                     {
                         loginPanel.Visible = false;
-                        adminPanel.Visible = true;
-                        if (!IsPostBack)
-                            PopulateEntries();
+                        modifyPanel.Visible = true;
                     }
+                }
+            }
+
+            using (var service = new HibernateService())
+            {
+                Entry entry = null;
+                if (Request.QueryString["id"] != null)
+                {
+                    long id = Int64.Parse(Request.QueryString["id"]);
+                    entry = service.FindById<Entry>(id);
+                }
+                if (entry == null)
+                {
+                    title.Text = "Jakeism Not Found";
+                    entryBody.Visible = false;
+                    submit.Visible = false;
+                }
+                else
+                {
+                    Id = entry.Id;
+                    title.Text = "<h2>Jakeism #" + entry.Id + "</h2>";
+                    entryBody.Text = entry.EntryBody;
                 }
             }
         }
@@ -63,29 +91,10 @@ namespace Jakeism.Admin
             }
         }
 
-        protected void Delete_Entries(object sender, EventArgs e)
-        {
-            // TODO
-        }
-
-        protected void Update_Entries(object sender, EventArgs e)
-        {
-            // TODO
-        }
-
         protected void Modify_Entry(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            Response.Redirect("ManageEntry.aspx?id=" + button.CommandArgument);
+            // TODO
         }
 
-        private void PopulateEntries()
-        {
-            using (var service = new HibernateService())
-            {
-                entries.DataSource = service.GetAllRecords(typeof(Entry));
-                entries.DataBind();
-            }
-        }
     }
 }

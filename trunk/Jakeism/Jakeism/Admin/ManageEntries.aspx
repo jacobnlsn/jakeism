@@ -31,7 +31,9 @@
             ID: <%# Eval("Id") %><br />
             <%# Eval("EntryBody") %><br />
             Author: <%# Eval("User.UserName") %><br />
-            Date: <%# Eval("Date") %><br /><br />
+            Date: <%# Eval("Date") %><br />
+            <asp:Button ID="ModifyButton" runat="server" Text="Modify" OnClick="Modify_Entry" CommandArgument='<%# Eval("Id") %>' /><br />
+            <br />
         </ItemTemplate>
 
         <EmptyDataTemplate>
