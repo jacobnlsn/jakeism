@@ -15,17 +15,22 @@
     <property name="IsAdmin" type="Boolean" />
     <property name="DateRegistered" type="DateTime" />
 
-    <set name="Entries" table="JAKEISM_ENTRY" cascade="all" inverse="true" >
+    <set name="Entries" table="JAKEISM_ENTRY" cascade="all-delete-orphan" inverse="true" >
       <key column="USER_ID" />
       <one-to-many class="Entry" />
     </set>
 
-    <set name="Comments" table="JAKEISM_COMMENT" cascade="all" inverse="true" >
+    <set name="Comments" table="JAKEISM_COMMENT" cascade="all-delete-orphan" inverse="true" >
       <key column="USER_ID" />
       <one-to-many class="Comment" />
     </set>
     
     <set name="Votes" table="JAKEISM_VOTES" cascade="all" inverse="true" >
+      <key column="USER_ID" />
+      <many-to-many class="Entry" column="ENTRY_ID" />
+    </set>
+
+    <set name="Favorites" table="JAKEISM_FAVORITES" cascade="all" inverse="true" >
       <key column="USER_ID" />
       <many-to-many class="Entry" column="ENTRY_ID" />
     </set>

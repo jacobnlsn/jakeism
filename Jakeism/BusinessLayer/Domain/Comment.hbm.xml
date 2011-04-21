@@ -12,8 +12,8 @@
     <property name="CommentBody" />
     <property name="Date" type="DateTime" />
     
-    <many-to-one name="Entry" class="Entry" column="ENTRY_ID" cascade="all" />
-    <many-to-one name="User" class="User" column="USER_ID" cascade="all" />
+    <many-to-one name="Entry" class="Entry" column="ENTRY_ID" />
+    <many-to-one name="User" class="User" column="USER_ID" />
     
   </class>
 

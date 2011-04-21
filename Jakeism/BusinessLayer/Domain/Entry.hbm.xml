@@ -12,7 +12,7 @@
     <property name="EntryBody" />
     <property name="Date" type="DateTime" />
     
-    <many-to-one name="User" class="User" column="USER_ID" cascade="all" />
+    <many-to-one name="User" class="User" column="USER_ID" />
 
     <set name="Comments" table="JAKEISM_COMMENTS" cascade="all">
       <key column="ENTRY_ID" />

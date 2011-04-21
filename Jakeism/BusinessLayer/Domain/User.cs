@@ -23,6 +23,8 @@ namespace BusinessLayer.Domain
 
         private ISet<Entry> votes;
 
+        private ISet<Entry> favorites;
+
         public User()
         {
             dateRegistered = DateTime.Now;
@@ -76,6 +78,12 @@ namespace BusinessLayer.Domain
         {
             get { return this.votes; }
             set { this.votes = value; }
+        }
+
+        public virtual ISet<Entry> Favorites
+        {
+            get { return this.favorites; }
+            set { this.favorites = value; }
         }
     }
 }
