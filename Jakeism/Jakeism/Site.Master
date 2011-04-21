@@ -1,53 +1,76 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Jakeism.SiteMaster" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head runat="server">
-    <title></title>
-    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
-    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
-    </asp:ContentPlaceHolder>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Jakeism</title>
+<link href="styles/reset.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="styles/style.css" rel="stylesheet" type="text/css" media="screen" />
+<!--[if IE]>
+    <link href="styles/ie.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+<asp:ContentPlaceHolder ID="HeadContent" runat="server">
+</asp:ContentPlaceHolder>
 </head>
+
 <body>
-    <form runat="server">
-    <div class="page">
-        <div class="header">
-            <div class="title">
-                <h1>
-                    Jakeism [beta]
-                </h1>
+  <form runat="server">
+    <div id="wrapper">
+        <div id="header">
+            <div id="header-left">
+                <a href="Default.aspx" title="Jakeism"><img alt="Jakeism" id="logo" src="images/jakeism.png" /></a>
+                <div id="tag"><span class="tagline">Because sometimes laughing at the expense of others is just great.</span></div>
             </div>
-            <div class="loginDisplay">
-                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                    <AnonymousTemplate>
-                        [ <a href="~/Users/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> | <a id="A1" href="~/Users/Register.aspx" runat="server">Register</a> ]
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>
-                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                        [ <a id="A2" href="~/Users/EditProfile.aspx" runat="server">Edit Profile</a> | 
-                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
-                    </LoggedInTemplate>
-                </asp:LoginView>
+            <div id="header-right">
+                <div id="login">
+                  <span class="util">
+                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                        <AnonymousTemplate>
+                            [ <a href="~/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> | <a id="A1" href="~/Register.aspx" runat="server">Register</a> ]
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                            [ <a id="A2" href="~/EditProfile.aspx" runat="server">Edit Profile</a> | 
+                            <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                  </span>
+                </div>
             </div>
-            <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
-                    <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
-                        <asp:MenuItem NavigateUrl="~/Entries/CreateEntry.aspx" Text="Add Jakeism"/>
-                        <asp:MenuItem NavigateUrl="~/Users" Text="Users"/>
-                    </Items>
-                </asp:Menu>
+            <div id="menu">
+                <div id="navigation">
+                    <ul>
+                        <li><a href="Default.aspx">Home</a></li>
+                        <li><a href="CreateEntry.aspx">Add Jakeism</a></li>
+                        <li><a href="#">Top Jakeisms</a></li>
+                        <li><a href="#">The Archive</a></li>
+                        <li><a href="#">Users</a></li>
+                    </ul>
+                </div>
+                <div id="search">
+                    <table>
+                        <tr>
+                            <td><asp:TextBox runat="server" ID="searchbox" CssClass="searchbox" Text="Search for a Jakeism..." /></td>
+                            <td><asp:Button runat="server" ID="searchbutton" CssClass="searchbutton" Text="" /></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-        <div class="main">
+        <div id="body">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div><!-- end body -->
+        <div id="footer">
+            <div id="footer-left">
+                <p>&copy; Copyright 2011 Jakeism.info. All Rights Reserved.</p> 
+            </div>
+            <div id="footer-right">
+                <p><a href="#">users</a> | <a href="#">the archive</a> | <a href="#">top jakeisms</a> | <a href="#">add jakeism</a> | <a href="index.html">home</a></p>
+            </div>
         </div>
-        <div class="clear">
-        </div>
+        <div class="clear"></div>
     </div>
-    <div class="footer">
-        
-    </div>
-    </form>
+  </form>
 </body>
 </html>
