@@ -52,7 +52,7 @@ namespace Jakeism.Entries
                 service.Save(entry);
                 id = entry.Id;
             }
-            Response.Redirect("~/Entries/ViewEntry.aspx?id=" + id);
+            Response.Redirect("~/ViewEntry.aspx?id=" + id);
         }
     }
 }

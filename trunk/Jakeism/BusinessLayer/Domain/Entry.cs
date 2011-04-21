@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using Iesi.Collections.Generic;
+using BusinessLayer.Util;
 
 namespace BusinessLayer.Domain
 {
@@ -51,6 +52,18 @@ namespace BusinessLayer.Domain
         {
             get { return this.votes; }
             set { this.votes = value; }
+        }
+
+        public virtual string Tier
+        {
+            get
+            {
+                if (Votes.Count >= Constants.TIER_TWO)
+                    return "dark";
+                if (Votes.Count < Constants.TIER_TWO && Votes.Count >= Constants.TIER_ONE)
+                    return "med";
+                return "light";
+            }
         }
 
         public virtual void AddVote(User vote)

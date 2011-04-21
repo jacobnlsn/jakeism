@@ -93,21 +93,32 @@
     <Content Include="Admin\ManageEntries.aspx" />
     <Content Include="Admin\ManageEntry.aspx" />
     <Content Include="Admin\ManageUsers.aspx" />
-    <Content Include="Entries\CreateEntry.aspx" />
-    <Content Include="Entries\Default.aspx" />
-    <Content Include="Entries\ViewEntry.aspx" />
+    <Content Include="CreateEntry.aspx" />
+    <Content Include="ViewEntry.aspx" />
+    <Content Include="images\favorite-clicked.png" />
+    <Content Include="images\favorite-unclicked.png" />
+    <Content Include="images\footerbg.gif" />
+    <Content Include="images\gradientbg.gif" />
+    <Content Include="images\headerbg.gif" />
+    <Content Include="images\jakeism.png" />
+    <Content Include="images\searchbg.gif" />
+    <Content Include="images\searchbuttonbg.gif" />
+    <Content Include="images\thumbsup-unclicked-dark.gif" />
+    <Content Include="images\thumbsup-unclicked-light.gif" />
+    <Content Include="images\thumbsup-unclicked-med.gif" />
     <Content Include="Scripts\forms.js" />
-    <Content Include="Styles\Site.css" />
+    <Content Include="Styles\ie.css" />
+    <Content Include="Styles\reset.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Users\Default.aspx" />
-    <Content Include="Users\EditProfile.aspx" />
-    <Content Include="Users\Login.aspx" />
-    <Content Include="Users\Register.aspx" />
-    <Content Include="Users\ViewUser.aspx" />
+    <Content Include="Styles\style.css" />
+    <Content Include="EditProfile.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="ViewUser.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -175,25 +186,18 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Entries\CreateEntry.aspx.cs">
+    <Compile Include="CreateEntry.aspx.cs">
       <DependentUpon>CreateEntry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Entries\CreateEntry.aspx.designer.cs">
+    <Compile Include="CreateEntry.aspx.designer.cs">
       <DependentUpon>CreateEntry.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Entries\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Entries\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Entries\ViewEntry.aspx.cs">
+    <Compile Include="ViewEntry.aspx.cs">
       <DependentUpon>ViewEntry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Entries\ViewEntry.aspx.designer.cs">
+    <Compile Include="ViewEntry.aspx.designer.cs">
       <DependentUpon>ViewEntry.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormsAuthenticationService.cs" />
@@ -208,39 +212,32 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Users\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Users\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Users\EditProfile.aspx.cs">
+    <Compile Include="EditProfile.aspx.cs">
       <DependentUpon>EditProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Users\EditProfile.aspx.designer.cs">
+    <Compile Include="EditProfile.aspx.designer.cs">
       <DependentUpon>EditProfile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Users\Login.aspx.cs">
+    <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Users\Login.aspx.designer.cs">
+    <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Users\Register.aspx.cs">
+    <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Users\Register.aspx.designer.cs">
+    <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Users\ViewUser.aspx.cs">
+    <Compile Include="ViewUser.aspx.cs">
       <DependentUpon>ViewUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Users\ViewUser.aspx.designer.cs">
+    <Compile Include="ViewUser.aspx.designer.cs">
       <DependentUpon>ViewUser.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
