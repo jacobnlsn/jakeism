@@ -13,15 +13,6 @@ namespace Jakeism.Entries {
     public partial class ViewEntry {
         
         /// <summary>
-        /// title control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label title;
-        
-        /// <summary>
         /// body control.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace Jakeism.Entries {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label body;
+        
+        /// <summary>
+        /// title control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label title;
         
         /// <summary>
         /// postedBy control.

@@ -2,6 +2,7 @@
     CodeBehind="Default.aspx.cs" Inherits="Jakeism._Default" EnableEventValidation="false" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+    <title>Jakeism</title>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 <asp:ListView runat="server" ID="entries">
@@ -38,7 +39,7 @@
                      <%# Eval("Comments.Count") %> comments</a></p>
                 </div>
             </div>
-        </div><!-- end entry --> 
+        </div>
     </ItemTemplate>
 
     <EmptyDataTemplate>

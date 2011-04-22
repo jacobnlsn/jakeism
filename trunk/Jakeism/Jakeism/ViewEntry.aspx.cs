@@ -18,6 +18,18 @@ namespace Jakeism.Entries
             set;
         }
 
+        protected string Tier
+        {
+            get;
+            set;
+        }
+
+        protected int Votes
+        {
+            get;
+            set;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             using (var service = new HibernateService())
@@ -27,6 +39,8 @@ namespace Jakeism.Entries
                 {
                     long id = Int64.Parse(Request.QueryString["id"]);
                     entry = service.FindById<Entry>(id);
+                    Tier = entry.Tier;
+                    Votes = entry.Votes.Count;
                 }
                 if (entry == null)
                 {
@@ -40,9 +54,9 @@ namespace Jakeism.Entries
                 else
                 {
                     Id = entry.Id;
-                    title.Text = "<h2>Jakeism #" + entry.Id + "</h2>";
+                    title.Text = "Jakeism #" + entry.Id;
                     body.Text = entry.EntryBody;
-                    postedBy.Text = "<i>Posted by <a href='../Users/ViewUser.aspx?id=" + entry.User.Id + "'>" + entry.User.UserName + "</a> on " + entry.Date + "</i>";
+                    postedBy.Text = "posted by <a href='ViewUser.aspx?id=" + entry.User.Id + "'>" + entry.User.UserName + "</a> on " + entry.Date;
                     IList<Comment> data = service.GetCommentsByEntry(entry);
                     commentsList.DataSource = data;
                     commentsList.DataBind();

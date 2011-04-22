@@ -43,7 +43,9 @@ namespace Jakeism.Users
                     string salt = Util.CreateSalt(Constants.SALT_SIZE);
                     CurrentUser.Password = Util.CreatePasswordHash(passwordField.Text.Trim(), salt);
                 }
-                else if (!String.IsNullOrEmpty(passwordField.Text.Trim()) && !passwordField.Text.Trim().Equals(confirmPassword.Text.Trim()))
+                else if ((!String.IsNullOrEmpty(passwordField.Text.Trim()) && !passwordField.Text.Trim().Equals(confirmPassword.Text.Trim()))
+                    || (!String.IsNullOrEmpty(confirmPassword.Text.Trim()) && String.IsNullOrEmpty(passwordField.Text.Trim()))
+                    || (!String.IsNullOrEmpty(passwordField.Text.Trim()) && String.IsNullOrEmpty(confirmPassword.Text.Trim())))
                 {
                     matchfail.Visible = true;
                     return;

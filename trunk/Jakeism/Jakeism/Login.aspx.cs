@@ -31,7 +31,7 @@ namespace Jakeism.Users
                     string hashedPassword = Util.CreatePasswordHash(password, salt);
                     if (hashedPassword.Equals(exists.Password))
                     {
-                        FormsAuthenticationService.SignIn(username, true);
+                        FormsAuthenticationService.SignIn(username, remember.Checked);
                         Response.Redirect("~/Default.aspx");
                     }
                     else
