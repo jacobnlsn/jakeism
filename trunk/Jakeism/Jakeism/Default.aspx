@@ -1,11 +1,9 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="Default.aspx.cs" Inherits="Jakeism._Default" %>
+    CodeBehind="Default.aspx.cs" Inherits="Jakeism._Default" EnableEventValidation="false" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
-
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-
 <asp:ListView runat="server" ID="entries">
         
     <LayoutTemplate>   
@@ -13,13 +11,15 @@
     </LayoutTemplate>
 
     <ItemTemplate>
+        <asp:HiddenField ID="HiddenTier" runat="server" Value='<%# Eval("Tier") %>' />
+        <asp:HiddenField ID="HiddenId" runat="server" Value='<%# Eval("Id") %>' />
          <div class="entry entry-<%# Eval("Tier") %>">
              <div class="entry-body">
                  <p><%# Eval("EntryBody") %></p>
              </div>
             <div class="entry-vote">
                 <div class="vote-left">
-                    <a href="#"><img src="images/thumbsup-unclicked-<%# Eval("Tier") %>.gif" alt="Vote Up" /></a>
+                    <asp:ImageButton ID="thumb" runat="server" AlternateText="Vote Up" OnClick="Cast_Vote" CommandArgument='<%# Eval("Id") %>'  />
                 </div>
                 <div class="vote-right">
                     <span class="votecount"><%# Eval("Votes.Count") %></span>
@@ -30,7 +30,7 @@
             </div>
             <div class="meta">
                 <div class="favorite">
-                    <a title="Favorite" href="#"><img src="images/favorite-unclicked.png" alt="favorite" /></a>
+                    <asp:ImageButton ID="star" runat="server" AlternateText="Favorite" OnClick="Cast_Favorite" CommandArgument='<%# Eval("Id") %>'  />
                 </div>
                 <div class="info-bar">
                     <p>posted by <a href="ViewUser.aspx?id=<%# Eval("User.Id") %>"><%# Eval("User.UserName") %></a>
@@ -46,5 +46,4 @@
     </EmptyDataTemplate>
 
 </asp:ListView>
-
 </asp:Content>
