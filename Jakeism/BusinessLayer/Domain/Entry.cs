@@ -18,6 +18,8 @@ namespace BusinessLayer.Domain
 
         private ISet<User> votes;
 
+        private ISet<User> favorites;
+
         public Entry()
         {
             this.votes = new HashedSet<User>();
@@ -54,6 +56,12 @@ namespace BusinessLayer.Domain
             set { this.votes = value; }
         }
 
+        public virtual ISet<User> Favorites
+        {
+            get { return this.favorites; }
+            set { this.favorites = value; }
+        }
+
         public virtual string Tier
         {
             get
@@ -69,6 +77,21 @@ namespace BusinessLayer.Domain
         public virtual void AddVote(User vote)
         {
             this.votes.Add(vote);
+        }
+
+        public virtual void RemoveVote(User vote)
+        {
+            this.votes.Remove(vote);
+        }
+
+        public virtual void AddFavorite(User favorite)
+        {
+            this.favorites.Add(favorite);
+        }
+
+        public virtual void RemoveFavorite(User favorite)
+        {
+            this.favorites.Remove(favorite);
         }
 
         public override string ToString()

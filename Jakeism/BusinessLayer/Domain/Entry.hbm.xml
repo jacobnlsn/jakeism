@@ -23,6 +23,11 @@
       <key column="ENTRY_ID" />
       <many-to-many class="User" column="USER_ID" />
     </set>
+
+    <set name="Favorites" table="JAKEISM_FAVORITES" cascade="all">
+      <key column="ENTRY_ID" />
+      <many-to-many class="User" column="USER_ID" />
+    </set>
     
   </class>
 
