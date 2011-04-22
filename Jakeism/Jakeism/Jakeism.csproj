@@ -97,6 +97,9 @@
     <Content Include="CreateEntry.aspx" />
     <Content Include="images\login.png" />
     <Content Include="images\sadtroll.png" />
+    <Content Include="images\thumbsup-clicked-dark.gif" />
+    <Content Include="images\thumbsup-clicked-light.gif" />
+    <Content Include="images\thumbsup-clicked-med.gif" />
     <Content Include="Styles\site.css" />
     <Content Include="ViewEntry.aspx" />
     <Content Include="images\favorite-clicked.png" />
