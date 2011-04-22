@@ -40,15 +40,6 @@ namespace Jakeism.Entries {
         protected global::System.Web.UI.WebControls.TextBox entryBody;
         
         /// <summary>
-        /// fail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fail;
-        
-        /// <summary>
         /// submit control.
         /// </summary>
         /// <remarks>
@@ -56,5 +47,14 @@ namespace Jakeism.Entries {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit;
+        
+        /// <summary>
+        /// fail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label fail;
     }
 }
