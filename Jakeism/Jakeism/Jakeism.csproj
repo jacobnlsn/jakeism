@@ -97,6 +97,7 @@
     <Content Include="CreateEntry.aspx" />
     <Content Include="images\login.png" />
     <Content Include="images\quotes-blue.gif" />
+    <Content Include="images\quotes-gold.gif" />
     <Content Include="images\quotes-grey.gif" />
     <Content Include="images\sadtroll.png" />
     <Content Include="images\thumbsup-clicked-dark.gif" />
