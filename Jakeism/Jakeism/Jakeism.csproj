@@ -94,6 +94,7 @@
     <Content Include="Admin\ManageEntry.aspx" />
     <Content Include="Admin\ManageUsers.aspx" />
     <Content Include="CreateEntry.aspx" />
+    <Content Include="Styles\site.css" />
     <Content Include="ViewEntry.aspx" />
     <Content Include="images\favorite-clicked.png" />
     <Content Include="images\favorite-unclicked.png" />
@@ -114,7 +115,6 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Styles\style.css" />
     <Content Include="EditProfile.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />

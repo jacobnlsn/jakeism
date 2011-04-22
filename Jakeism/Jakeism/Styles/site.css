@@ -1,4 +1,4 @@
-/* Globals */
+﻿/* Globals */
 
 body {
 	background-color: #727272;
@@ -25,6 +25,12 @@ h2 {
 	font-size: 18px;
 	font-weight: bold;
 	margin: 0px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px;
 }
 
 /* Header */
@@ -278,6 +284,26 @@ h2 {
 
 .info-bar a:hover {
 	color: #3383ac;
+}
+
+#page-left  {
+    width: 55%;
+    float: left;
+}
+
+#page-right  {
+    width: 45%;
+    float: left;
+}
+
+#page-right p  
+{
+    margin-bottom: 8px;
+}
+
+.entry-form  {
+    width: 400px;
+    height: 80px;
 }
 
 /* Footer */
