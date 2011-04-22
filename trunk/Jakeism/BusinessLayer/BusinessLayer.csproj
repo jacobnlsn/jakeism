@@ -94,7 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Domain\Comment.hbm.xml" />
-    <EmbeddedResource Include="Domain\Entry.hbm.xml" />
+    <EmbeddedResource Include="Domain\Entry.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Domain\User.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
