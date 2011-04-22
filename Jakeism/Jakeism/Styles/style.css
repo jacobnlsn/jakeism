@@ -1,5 +1,3 @@
-@charset "utf-8";
-
 /* Globals */
 
 body {
@@ -76,7 +74,7 @@ h2 {
 
 .util {
 	color: #FFFFFF;
-	size: 14px;
+	font-size: 14px;
 }
 
 .util a {
