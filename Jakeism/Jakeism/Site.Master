@@ -4,7 +4,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Jakeism</title>
 <link href="Styles/reset.css" rel="stylesheet" type="text/css" media="screen" />
 <link href="Styles/site.css" rel="stylesheet" type="text/css" media="screen" />
 <!--[if IE]>
@@ -30,7 +29,7 @@
                             [ <a href="~/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> | <a id="A1" href="~/Register.aspx" runat="server">Register</a> ]
                         </AnonymousTemplate>
                         <LoggedInTemplate>
-                            Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                            Welcome, <span class="bold"><a href="ViewUser.aspx?user=<%= HttpContext.Current.User.Identity.Name %>"><asp:LoginName ID="HeadLoginName" runat="server" /></a></span>!
                             [ <a id="A2" href="~/EditProfile.aspx" runat="server">Edit Profile</a> | 
                             <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
                         </LoggedInTemplate>

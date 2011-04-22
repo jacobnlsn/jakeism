@@ -21,6 +21,15 @@ body {
 	clear: both;
 }
 
+.left 
+{
+    float: left;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 a {
     color: #6e78a9;
 }
@@ -36,7 +45,7 @@ h2 {
 }
 
 h3 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     margin: 0px;
 }
@@ -92,12 +101,12 @@ h3 {
 }
 
 .util a {
-	color: #FFFFFF;
+	color: #b3d1e6;
 	text-decoration: none;
 }
 
 .util a:hover {
-	color:#9ac0db;
+	color: #FFFFFF;
 }
 
 #menu {
@@ -295,12 +304,12 @@ h3 {
 }
 
 .page-left  {
-    width: 55%;
+    width: 50%;
     float: left;
 }
 
 .page-right  {
-    width: 45%;
+    width: 50%;
     float: left;
 }
 
@@ -314,10 +323,65 @@ h3 {
     height: 80px;
 }
 
-.right-context-image 
-{
+.right-context-image {
     margin-top: -15px;
     float: right;
+}
+
+.entry-view {
+    padding: 20px 0px 20px 0px;
+    margin-top: -2px;
+} 
+
+#comments-wrapper {
+    float: left;
+    width: 500px;
+    margin-top: 10px;
+}
+   
+.comment {
+    width: 445px;
+    float: left;
+    margin-bottom: 5px;
+    padding: 10px 10px 5px 10px;
+    background-color: #8f8f8f;
+    background-image: url("../images/quotes-grey.gif");
+    background-repeat: no-repeat;
+    background-position: right top;
+    color: #FFFFFF;
+    border-left: 2px solid #676767;
+}
+
+.comment a {
+    color: #4d5683;
+}
+
+.comment-alt {
+    width: 445px;
+    float: right;
+    margin-bottom: 5px;
+    background-color: #b9c9d7;
+    background-image: url("../images/quotes-blue.gif");
+    background-repeat: no-repeat;
+    background-position: right top;
+    padding: 10px 10px 5px 10px;
+    color: #000000;
+    border-left: 2px solid #8b969f;
+}
+
+.comment-alt a {
+    color: #4d5683;
+}
+
+.comment-body {
+    float: left;
+    width: 400px;
+}
+
+.comment-meta {
+    float: right;
+    margin-top: 10px;
+    color: #000000;
 }
 
 /* Footer */

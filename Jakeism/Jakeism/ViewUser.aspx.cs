@@ -34,9 +34,6 @@ namespace Jakeism.Users
                 if (DomainUser == null)
                 {
                     userTitle.Text = "User Not Found";
-                    infolbl.Visible = false;
-                    email.Visible = false;
-                    registered.Visible = false;
                     entrieslbl.Visible = false;
                     entries.Visible = false;
                     commentslbl.Visible = false;
@@ -44,8 +41,6 @@ namespace Jakeism.Users
                 }
                 else
                 {
-                    email.Text = "Email: " + DomainUser.Email;
-                    registered.Text = "Registered: " + DomainUser.DateRegistered;
                     userTitle.Text = DomainUser.UserName;
                     entries.DataSource = service.GetEntriesByUser(DomainUser).Reverse();
                     entries.DataBind();
