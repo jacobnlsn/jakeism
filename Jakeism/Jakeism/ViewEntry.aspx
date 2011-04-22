@@ -52,7 +52,7 @@
             <p><%# Eval("CommentBody") %></p>
           </div>
             <div class="comment-meta">
-                <a id="A1" runat='server' href='<%# String.Format("ViewUser.aspx?id={0}", Eval("User.Id")) %>'><%# Eval("User.UserName") %></a> (<a href="#comment-<%# Eval("Id") %>" id="#comment-<%# Eval("Id") %>"><%# Eval("Date") %></a>)
+                <a id="A1" runat='server' href='<%# String.Format("ViewUser.aspx?id={0}", Eval("User.Id")) %>'><%# Eval("User.UserName") %></a> on <a href="#comment-<%# Eval("Id") %>" id="#comment-<%# Eval("Id") %>"><%# Eval("Date") %></a>
             </div>
         </div>
     </ItemTemplate>
@@ -63,7 +63,7 @@
             <p><%# Eval("CommentBody") %></p>
           </div>
             <div class="comment-meta">
-                <a id="A1" runat='server' href='<%# String.Format("ViewUser.aspx?id={0}", Eval("User.Id")) %>'><%# Eval("User.UserName") %></a> (<a href="#comment-<%# Eval("Id") %>" id="#comment-<%# Eval("Id") %>"><%# Eval("Date") %></a>)
+                <a id="A1" runat='server' href='<%# String.Format("ViewUser.aspx?id={0}", Eval("User.Id")) %>'><%# Eval("User.UserName") %></a> on <a href="#comment-<%# Eval("Id") %>" id="#comment-<%# Eval("Id") %>"><%# Eval("Date") %></a>
             </div>
         </div>
     </AlternatingItemTemplate>
@@ -78,11 +78,13 @@
 
 <asp:Panel runat="server" ID="commentPanel" Visible="false">
   <div class="left">
-    <span class="bold"><asp:Label runat="server" ID="addCommentlbl" Text="Add Comment" /></span><br />
-    <asp:TextBox runat="server" ID="commentBox" Width="300" Height="75" TextMode="MultiLine" CssClass="word_count" />
-    <br /><span class="counter"></span><br />
-    <asp:Label runat="server" ID="fail" Visible="false" /><br />
-    <asp:Button runat="server" ID="submit" Text="Submit Comment" OnClick="Submit_Comment" />
+    <div id="addcomment">
+        <span class="bold"><asp:Label runat="server" ID="addCommentlbl" Text="Add Comment" /></span><br />
+        <asp:TextBox runat="server" ID="commentBox" Width="395" Height="75" TextMode="MultiLine" CssClass="word_count" />
+        <br /><span class="counter"></span><br />
+        <asp:Label runat="server" ID="fail" Visible="false" /><br />
+        <asp:Button runat="server" ID="submit" Text="Submit Comment" OnClick="Submit_Comment" />
+    </div>
   </div>
 </asp:Panel>
 
