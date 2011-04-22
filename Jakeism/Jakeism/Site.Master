@@ -65,7 +65,7 @@
                 <p>&copy; Copyright 2011 Jakeism.info. All Rights Reserved.</p> 
             </div>
             <div id="footer-right">
-                <p><a href="#">users</a> | <a href="#">the archive</a> | <a href="#">top jakeisms</a> | <a href="#">add jakeism</a> | <a href="index.html">home</a></p>
+                <p><a href="#">users</a> | <a href="#">the archive</a> | <a href="#">top jakeisms</a> | <a href="CreateEntry.aspx">add jakeism</a> | <a href="Default.aspx">home</a></p>
             </div>
         </div>
         <div class="clear"></div>
