@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="createtables.sql" />
+    <Content Include="DUMMY_DATA.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
