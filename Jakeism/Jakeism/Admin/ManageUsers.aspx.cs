@@ -83,18 +83,33 @@ namespace Jakeism.Admin
                 {
                     long id = long.Parse(row.Cells[1].Text);
                     CheckBox checkBx = row.FindControl("check") as CheckBox;
+                    TextBox userBx = row.FindControl("username") as TextBox;
+                    TextBox emailBx = row.FindControl("email") as TextBox;
+                    CheckBox adminBx = row.FindControl("IsAdmin") as CheckBox;
                     TextBox passBx = row.FindControl("password") as TextBox;
                     if (checkBx.Checked)
                     {
                         User user = service.FindById<User>(id);
+                        user.UserName = userBx.Text.Trim();
+                        user.Email = emailBx.Text.Trim();
+                        user.IsAdmin = adminBx.Checked;
                         string password = passBx.Text.Trim();
-                        string salt = Util.CreateSalt(Constants.SALT_SIZE);
-                        user.Password = Util.CreatePasswordHash(password, salt);
+                        if (!String.IsNullOrEmpty(password))
+                        {
+                            string salt = Util.CreateSalt(Constants.SALT_SIZE);
+                            user.Password = Util.CreatePasswordHash(password, salt);
+                        }
                         service.SaveOrUpdate(user);
                     }
                 }
                 Response.Redirect(Request.Url.AbsoluteUri);
             }
+        }
+
+        protected void View_Comments(object sender, EventArgs e)
+        {
+            LinkButton button = (LinkButton)sender;
+            Response.Redirect("ManageComments.aspx?type=user&id=" + button.CommandArgument);
         }
 
         private void PopulateUsers()

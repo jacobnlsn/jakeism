@@ -32,13 +32,13 @@
                 HeaderText="ID"
                 DataField="Id" />
 
-            <asp:BoundField
-                HeaderText="Username"
-                DataField="UserName" />
+            <asp:TemplateField HeaderText="Username">
+                <ItemTemplate><asp:TextBox runat="server" ID="username" Text='<%# Eval("UserName") %>' /></ItemTemplate>
+            </asp:TemplateField>
 
-            <asp:BoundField
-                HeaderText="Email"
-                DataField="Email" />
+            <asp:TemplateField HeaderText="Email">
+                <ItemTemplate><asp:TextBox runat="server" ID="email" Text='<%# Eval("Email") %>' /></ItemTemplate>
+            </asp:TemplateField>
 
             <asp:BoundField
                 HeaderText="Date Registered"
@@ -49,16 +49,16 @@
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="Comments">
-                <ItemTemplate><%# Eval("Comments.Count") %></ItemTemplate>
+                <ItemTemplate><asp:LinkButton ID="CommentsButton" runat="server" OnClick="View_Comments" CommandArgument='<%# Eval("Id") %>'><%# Eval("Comments.Count") %></asp:LinkButton></ItemTemplate>
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="Votes">
                 <ItemTemplate><%# Eval("Votes.Count") %></ItemTemplate>
             </asp:TemplateField>
 
-            <asp:BoundField
-                HeaderText="Admin"
-                DataField="IsAdmin" />
+            <asp:TemplateField HeaderText="Admin">
+                <ItemTemplate><center><asp:CheckBox ID="IsAdmin" runat="server" Checked='<%# Eval("IsAdmin") %>' /></center></ItemTemplate>
+            </asp:TemplateField>
 
             <asp:TemplateField HeaderText="Password">
                 <ItemTemplate><asp:TextBox runat="server" ID="password" TextMode="Password" /></ItemTemplate>
