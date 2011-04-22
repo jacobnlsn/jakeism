@@ -15,12 +15,7 @@ namespace Jakeism.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             ((Admin)this.Master).checkIfAdmin(Page);
-            if (!IsPostBack)
-            {
-                            PopulateEntries();
-                    }
-                
-            
+            PopulateEntries();
         }
 
         protected void Delete_Entries(object sender, EventArgs e)
@@ -46,6 +41,12 @@ namespace Jakeism.Admin
         {
             Button button = (Button)sender;
             Response.Redirect("ManageEntry.aspx?id=" + button.CommandArgument);
+        }
+
+        protected void View_Comments(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            Response.Redirect("ManageComments.aspx?type=entry&id=" + button.CommandArgument);
         }
 
         private void PopulateEntries()

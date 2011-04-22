@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="ManageEntries.aspx.cs" Inherits="Jakeism.Admin.ManageEntries" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="ManageEntries.aspx.cs" Inherits="Jakeism.Admin.ManageEntries" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 
@@ -20,7 +20,7 @@
             <%# Eval("EntryBody") %><br />
             Author: <%# Eval("User.UserName") %><br />
             Date: <%# Eval("Date") %><br />
-            <asp:Button ID="ModifyButton" runat="server" Text="Modify" OnClick="Modify_Entry" CommandArgument='<%# Eval("Id") %>' /><br />
+            <asp:Button ID="ViewCommentsButton" runat="server" Text="View Comments" OnClick="View_Comments" CommandArgument='<%# Eval("Id") %>' /><asp:Button ID="ModifyButton" runat="server" Text="Modify" OnClick="Modify_Entry" CommandArgument='<%# Eval("Id") %>' /><br />
             <br />
         </ItemTemplate>
 
