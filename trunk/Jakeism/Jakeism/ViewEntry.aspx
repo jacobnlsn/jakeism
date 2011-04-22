@@ -37,7 +37,7 @@
 
 <br />
 
-<h3 id="comments"><asp:Label runat="server" ID="commentslbl" Text="Comments" /></h3>
+<h3 id="comments"><asp:Label runat="server" ID="commentslbl" /></h3>
 <asp:ListView runat="server" ID="commentsList">
         
     <LayoutTemplate>
@@ -47,7 +47,7 @@
     </LayoutTemplate>
 
     <ItemTemplate>
-        <div class="comment">
+        <%# (bool)Eval("User.IsAdmin") && BusinessLayer.Util.Constants.ADMIN_COMMENTS ? "<div class='comment comment-admin'>" : "<div class='comment'>" %>
           <div class="comment-body">
             <p><%# Eval("CommentBody") %></p>
           </div>
@@ -58,7 +58,7 @@
     </ItemTemplate>
 
     <AlternatingItemTemplate>
-        <div class="comment-alt">
+        <%# (bool)Eval("User.IsAdmin") && BusinessLayer.Util.Constants.ADMIN_COMMENTS ? "<div class='comment-alt comment-admin'>" : "<div class='comment-alt'>"%>
           <div class="comment-body">
             <p><%# Eval("CommentBody") %></p>
           </div>
@@ -77,15 +77,13 @@
 <br />
 
 <asp:Panel runat="server" ID="commentPanel" Visible="false">
-  <div class="left">
     <div id="addcomment">
-        <span class="bold"><asp:Label runat="server" ID="addCommentlbl" Text="Add Comment" /></span><br />
-        <asp:TextBox runat="server" ID="commentBox" Width="395" Height="75" TextMode="MultiLine" CssClass="word_count" />
-        <br /><span class="counter"></span><br />
-        <asp:Label runat="server" ID="fail" Visible="false" /><br />
+        <h3><asp:Label runat="server" ID="addCommentlbl" Text="Add Comment" /></h3><br />
+        <asp:TextBox runat="server" ID="commentBox" Height="75" TextMode="MultiLine" CssClass="word_count" />
+        <br /><span class="counter"></span><br /><br />
         <asp:Button runat="server" ID="submit" Text="Submit Comment" OnClick="Submit_Comment" />
+        <asp:Label runat="server" ID="fail" Visible="false" ForeColor="Red" />
     </div>
-  </div>
 </asp:Panel>
 
 </asp:Content>

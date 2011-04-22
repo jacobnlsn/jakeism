@@ -10,5 +10,6 @@ namespace BusinessLayer.Util
         public const int SALT_SIZE = 16;
         public const int TIER_ONE = 10;
         public const int TIER_TWO = 20;
+        public const bool ADMIN_COMMENTS = false;
     }
 }

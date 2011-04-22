@@ -385,6 +385,20 @@ h3 {
     color: #FFFFFF;
 }
 
+.comment-admin {
+    background-color: #d3d395;
+    background-image: url("../images/quotes-gold.gif");
+    background-repeat: no-repeat;
+    background-position: right top;
+    border-left: 2px solid #c4c48f;
+    color: #000000;
+}
+
+.comment-admin a 
+{
+    color: #6e7fc5;
+}
+
 .comment-body {
     float: left;
     width: 650px;
@@ -399,10 +413,15 @@ h3 {
 }
 
 #addcomment {
+    float: left;
     margin-top: 10px;
-    width: 400px;
-    background-color: #cbcbcb;
+    width: 745px;
+    background-color: #e4e4e4;
     padding: 10px;
+}
+
+#addcomment textarea {
+    width: 740px;
 }
 
 /* Footer */

@@ -61,7 +61,7 @@ namespace Jakeism.Entries
                     commentsList.DataSource = data;
                     commentsList.DataBind();
                     if (data.Count > 0)
-                        commentslbl.Text += " (" + data.Count + ")";
+                        commentslbl.Text = "Comments (" + data.Count + ")";
                 }
                 if (User.Identity.IsAuthenticated && entry != null)
                     commentPanel.Visible = true;
@@ -96,7 +96,7 @@ namespace Jakeism.Entries
                 commentsList.DataSource = data;
                 commentsList.DataBind();
                 if (data.Count > 0)
-                    commentslbl.Text += " (" + data.Count + ")";
+                    commentslbl.Text = "Comments (" + data.Count + ")";
                 Response.Redirect(Request.Url.AbsoluteUri, false);
             }
         }
