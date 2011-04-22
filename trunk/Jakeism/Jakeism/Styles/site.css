@@ -21,6 +21,14 @@ body {
 	clear: both;
 }
 
+a {
+    color: #6e78a9;
+}
+
+a:hover  {
+    color: #9ac0db;
+}
+
 h2 {
 	font-size: 18px;
 	font-weight: bold;
@@ -286,17 +294,17 @@ h3 {
 	color: #3383ac;
 }
 
-#page-left  {
+.page-left  {
     width: 55%;
     float: left;
 }
 
-#page-right  {
+.page-right  {
     width: 45%;
     float: left;
 }
 
-#page-right p  
+.page-right p  
 {
     margin-bottom: 8px;
 }
@@ -304,6 +312,12 @@ h3 {
 .entry-form  {
     width: 400px;
     height: 80px;
+}
+
+.right-context-image 
+{
+    margin-top: -15px;
+    float: right;
 }
 
 /* Footer */
