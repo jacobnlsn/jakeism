@@ -37,34 +37,96 @@ namespace Jakeism.Entries
                 Entry entry = null;
                 if (Request.QueryString["id"] != null)
                 {
-                    long id = Int64.Parse(Request.QueryString["id"]);
-                    entry = service.FindById<Entry>(id);
-                    Tier = entry.Tier;
-                    Votes = entry.Votes.Count;
+                    long id;
+                    if (Int64.TryParse(Request.QueryString["id"], out id))
+                        entry = service.FindById<Entry>(id);
                 }
                 if (entry == null)
                 {
-                    title.Text = "Jakeism Not Found";
-                    body.Visible = false;
-                    postedBy.Visible = false;
-                    commentslbl.Visible = false;
-                    commentsList.Visible = false;
-                    commentPanel.Visible = false;
+                    notFound.Visible = true;
+                    notFoundMsg.Visible = true;
+                    entryPanel.Visible = false;
                 }
                 else
                 {
                     Id = entry.Id;
+                    Tier = entry.Tier;
+                    Votes = entry.Votes.Count;
                     title.Text = "Jakeism #" + entry.Id;
                     body.Text = entry.EntryBody;
+                    votes.Text = Votes.ToString();
                     postedBy.Text = "posted by <a href='ViewUser.aspx?id=" + entry.User.Id + "'>" + entry.User.UserName + "</a> on " + entry.Date;
-                    IList<Comment> data = service.GetCommentsByEntry(entry);
+                    var data = service.GetCommentsByEntry(entry);
+                    thumb.ImageUrl = "images/thumbsup-unclicked.png";
+                    star.ImageUrl = "images/favorite-unclicked.png";
                     commentsList.DataSource = data;
                     commentsList.DataBind();
                     if (data.Count > 0)
                         commentslbl.Text = "Comments (" + data.Count + ")";
                 }
-                if (User.Identity.IsAuthenticated && entry != null)
-                    commentPanel.Visible = true;
+                if (!User.Identity.IsAuthenticated || entry == null) return;
+                var user = service.FindUserByUserName(User.Identity.Name);
+                if (user.Votes.Contains(entry))
+                    thumb.ImageUrl = "images/thumbsup-clicked.png";
+                if (user.Favorites.Contains(entry))
+                    star.ImageUrl = "images/favorite-clicked.png";
+                commentPanel.Visible = true;
+            }
+        }
+
+        protected void Cast_Vote(object sender, EventArgs e)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                using (var service = new HibernateService())
+                {
+                    User theUser = service.FindUserByUserName(User.Identity.Name);
+                    Entry theEntry = (Entry)service.FindById(Id, typeof(Entry));
+                    if (theEntry.Votes.Contains(theUser))
+                    {
+                        thumb.ImageUrl = "images/thumbsup-unclicked.png";
+                        theEntry.RemoveVote(theUser);
+                        votes.Text = theEntry.Votes.Count.ToString();
+                    }
+                    else
+                    {
+                        theEntry.AddVote(theUser);
+                        thumb.ImageUrl = "images/thumbsup-clicked.png";
+                        votes.Text = theEntry.Votes.Count.ToString();
+                    }
+                    service.SaveOrUpdate(theEntry);
+                }
+            }
+            else
+            {
+                Response.Redirect("Register.aspx");
+            }
+        }
+
+        protected void Cast_Favorite(object sender, EventArgs e)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                using (var service = new HibernateService())
+                {
+                    Entry theEntry = (Entry)service.FindById(Id, typeof(Entry));
+                    User theUser = service.FindUserByUserName(User.Identity.Name);
+                    if (theEntry.Favorites.Contains(theUser))
+                    {
+                        theEntry.RemoveFavorite(theUser);
+                        star.ImageUrl = "images/favorite-unclicked.png";
+                    }
+                    else
+                    {
+                        theEntry.AddFavorite(theUser);
+                        star.ImageUrl = "images/favorite-clicked.png";
+                    }
+                    service.SaveOrUpdate(theEntry);
+                }
+            }
+            else
+            {
+                Response.Redirect("Register.aspx");
             }
         }
 
