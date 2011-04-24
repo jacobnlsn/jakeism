@@ -103,6 +103,8 @@
     <Content Include="images\thumbsup-clicked-dark.gif" />
     <Content Include="images\thumbsup-clicked-light.gif" />
     <Content Include="images\thumbsup-clicked-med.gif" />
+    <Content Include="images\thumbsup-clicked.png" />
+    <Content Include="images\thumbsup-unclicked.png" />
     <Content Include="images\user.png" />
     <Content Include="Styles\site.css" />
     <Content Include="ViewEntry.aspx" />

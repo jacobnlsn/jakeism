@@ -22,6 +22,11 @@ namespace Jakeism.Users
             string username = usernameField.Text.Trim();
             string email = emailField.Text.Trim();
             string password = passwordField.Text.Trim();
+            if (password.Length == 0)
+            {
+                Response.Write("Password may not be empty");
+                return;
+            }
             if (!password.Equals(confirmPassword.Text.Trim()))
             {
                 Response.Write("Passwords do not match!");

@@ -13,6 +13,8 @@ namespace Jakeism
             if (String.IsNullOrEmpty(userName)) throw new ArgumentException("Value cannot be null or empty.", "userName");
 
             FormsAuthentication.SetAuthCookie(userName, createPersistentCookie);
+            HttpCookie cookie = HttpContext.Current.Response.Cookies[FormsAuthentication.FormsCookieName];
+            cookie.Expires = DateTime.Now.Add(new TimeSpan(30, 0, 0, 0));
         }
 
         public static void SignOut()

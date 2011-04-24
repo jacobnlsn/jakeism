@@ -17,16 +17,23 @@ namespace Jakeism
             set;
         }
 
+        protected int Count
+        {
+            get;
+            set;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            Count = 0;
             using (var service = new HibernateService())
             {
-                entries.DataSource = service.GetAllRecords(typeof(Entry)).Reverse();
+                entries.DataSource = service.GetAllRecords<Entry>().OrderByDescending(n => n.Date);
                 entries.DataBind();
 
                 foreach (ListViewDataItem currentItem in entries.Items)
                 {
-                    ((ImageButton)currentItem.FindControl("thumb")).ImageUrl = "images/thumbsup-unclicked-" + ((HiddenField)currentItem.FindControl("HiddenTier")).Value + ".gif";
+                    ((ImageButton)currentItem.FindControl("thumb")).ImageUrl = "images/thumbsup-unclicked.png";
                     ((ImageButton)currentItem.FindControl("star")).ImageUrl = "images/favorite-unclicked.png";
                 }
 
@@ -37,7 +44,7 @@ namespace Jakeism
                     {
                         if(CurrentUser.Votes.Contains(service.FindById(Int64.Parse(((HiddenField)currentItem.FindControl("HiddenId")).Value), typeof(Entry))))
                         {
-                            ((ImageButton)currentItem.FindControl("thumb")).ImageUrl = "images/thumbsup-clicked-" + ((HiddenField)currentItem.FindControl("HiddenTier")).Value + ".gif";
+                            ((ImageButton)currentItem.FindControl("thumb")).ImageUrl = "images/thumbsup-clicked.png";
                         }
                         if (CurrentUser.Favorites.Contains(service.FindById(Int64.Parse(((HiddenField)currentItem.FindControl("HiddenId")).Value), typeof(Entry))))
                         {
@@ -55,15 +62,19 @@ namespace Jakeism
                 ImageButton button = (ImageButton)sender;
                 using (var service = new HibernateService())
                 {
-                    Entry theEntry = (Entry)service.FindById(Int64.Parse(button.CommandArgument), typeof(Entry));
                     User theUser = service.FindUserByUserName(User.Identity.Name);
+                    Entry theEntry = (Entry)service.FindById(Int64.Parse(button.CommandArgument), typeof(Entry));
                     if (theEntry.Votes.Contains(theUser))
                     {
+                        ((ImageButton)entries.Items[int.Parse(button.CommandName)].FindControl("thumb")).ImageUrl = "images/thumbsup-unclicked.png";
                         theEntry.RemoveVote(theUser);
+                        ((Label)entries.Items[int.Parse(button.CommandName)].FindControl("votes")).Text = theEntry.Votes.Count.ToString();
                     }
                     else
                     {
                         theEntry.AddVote(theUser);
+                        ((ImageButton)entries.Items[int.Parse(button.CommandName)].FindControl("thumb")).ImageUrl = "images/thumbsup-clicked.png";
+                        ((Label)entries.Items[int.Parse(button.CommandName)].FindControl("votes")).Text = theEntry.Votes.Count.ToString();
                     }
                     service.SaveOrUpdate(theEntry);
                 }
@@ -72,7 +83,6 @@ namespace Jakeism
             {
                 Response.Redirect("Register.aspx");
             }
-            Response.Redirect(Request.Url.AbsoluteUri);
         }
 
         protected void Cast_Favorite(object sender, EventArgs e)
@@ -87,10 +97,12 @@ namespace Jakeism
                     if (theEntry.Favorites.Contains(theUser))
                     {
                         theEntry.RemoveFavorite(theUser);
+                        ((ImageButton)entries.Items[int.Parse(button.CommandName)].FindControl("star")).ImageUrl = "images/favorite-unclicked.png";
                     }
                     else
                     {
                         theEntry.AddFavorite(theUser);
+                        ((ImageButton)entries.Items[int.Parse(button.CommandName)].FindControl("star")).ImageUrl = "images/favorite-clicked.png";
                     }
                     service.SaveOrUpdate(theEntry);
                 }
@@ -99,7 +111,6 @@ namespace Jakeism
             {
                 Response.Redirect("Register.aspx");
             }
-            Response.Redirect(Request.Url.AbsoluteUri);
         }
 
     }
