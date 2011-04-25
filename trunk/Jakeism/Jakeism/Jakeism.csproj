@@ -108,6 +108,7 @@
     <Content Include="images\user.png" />
     <Content Include="Search.aspx" />
     <Content Include="Styles\site.css" />
+    <Content Include="TopEntries.aspx" />
     <Content Include="ViewEntry.aspx" />
     <Content Include="images\favorite-clicked.png" />
     <Content Include="images\favorite-unclicked.png" />
@@ -219,6 +220,13 @@
     </Compile>
     <Compile Include="Search.aspx.designer.cs">
       <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TopEntries.aspx.cs">
+      <DependentUpon>TopEntries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TopEntries.aspx.designer.cs">
+      <DependentUpon>TopEntries.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewEntry.aspx.cs">
       <DependentUpon>ViewEntry.aspx</DependentUpon>
