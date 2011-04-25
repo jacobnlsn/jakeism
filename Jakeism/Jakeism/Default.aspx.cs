@@ -69,6 +69,7 @@ namespace Jakeism
                     if (theEntry.Votes.Contains(theUser))
                     {
                         ((ImageButton)entries.Items[int.Parse(button.CommandName)].FindControl("thumb")).ImageUrl = "images/thumbsup-unclicked.png";
+                        ((ImageButton)entries.Items[int.Parse(button.CommandName)].FindControl("thumb")).ToolTip = "Vote Up";
                         theEntry.RemoveVote(theUser);
                         ((Label)entries.Items[int.Parse(button.CommandName)].FindControl("votes")).Text = theEntry.Votes.Count.ToString();
                     }
@@ -76,6 +77,7 @@ namespace Jakeism
                     {
                         theEntry.AddVote(theUser);
                         ((ImageButton)entries.Items[int.Parse(button.CommandName)].FindControl("thumb")).ImageUrl = "images/thumbsup-clicked.png";
+                        ((ImageButton)entries.Items[int.Parse(button.CommandName)].FindControl("thumb")).ToolTip = "Remove Vote";
                         ((Label)entries.Items[int.Parse(button.CommandName)].FindControl("votes")).Text = theEntry.Votes.Count.ToString();
                     }
                     service.SaveOrUpdate(theEntry);
@@ -100,11 +102,13 @@ namespace Jakeism
                     {
                         theEntry.RemoveFavorite(theUser);
                         ((ImageButton)entries.Items[int.Parse(button.CommandName)].FindControl("star")).ImageUrl = "images/favorite-unclicked.png";
+                        ((ImageButton)entries.Items[int.Parse(button.CommandName)].FindControl("star")).ToolTip = "Add to Favorites";
                     }
                     else
                     {
                         theEntry.AddFavorite(theUser);
                         ((ImageButton)entries.Items[int.Parse(button.CommandName)].FindControl("star")).ImageUrl = "images/favorite-clicked.png";
+                        ((ImageButton)entries.Items[int.Parse(button.CommandName)].FindControl("star")).ToolTip = "Remove from Favorites";
                     }
                     service.SaveOrUpdate(theEntry);
                 }

@@ -55,7 +55,7 @@
     </ItemTemplate>
 
     <EmptyDataTemplate>
-        <div>No entries</div>
+        <div><p>No entries</p></div>
     </EmptyDataTemplate>
 
 </asp:ListView>

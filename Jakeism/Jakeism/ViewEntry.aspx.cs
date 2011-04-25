@@ -53,7 +53,9 @@ namespace Jakeism.Entries
                     votes.Text = Votes.ToString();
                     postedBy.Text = "posted by <a title='View User' href='ViewUser.aspx?id=" + entry.User.Id + "'>" + entry.User.UserName + "</a> on " + entry.FormattedDate + " at " + entry.FormattedTime;
                     thumb.ImageUrl = "images/thumbsup-unclicked.png";
+                    thumb.ToolTip = "Vote Up";
                     star.ImageUrl = "images/favorite-unclicked.png";
+                    star.ToolTip = "Add to Favorites";
                     var data = service.GetCommentsByEntry(entry);
                     commentsList.DataSource = data;
                     commentsList.DataBind();
@@ -63,9 +65,15 @@ namespace Jakeism.Entries
                 if (!User.Identity.IsAuthenticated || entry == null) return;
                 var user = service.FindUserByUserName(User.Identity.Name);
                 if (user.Votes.Contains(entry))
+                {
                     thumb.ImageUrl = "images/thumbsup-clicked.png";
+                    thumb.ToolTip = "Remove Vote";
+                }
                 if (user.Favorites.Contains(entry))
+                {
                     star.ImageUrl = "images/favorite-clicked.png";
+                    star.ToolTip = "Remove from Favorites";
+                }
                 commentPanel.Visible = true;
             }
         }
@@ -81,6 +89,7 @@ namespace Jakeism.Entries
                     if (theEntry.Votes.Contains(theUser))
                     {
                         thumb.ImageUrl = "images/thumbsup-unclicked.png";
+                        thumb.ToolTip = "Vote Up";
                         theEntry.RemoveVote(theUser);
                         votes.Text = theEntry.Votes.Count.ToString();
                     }
@@ -88,6 +97,7 @@ namespace Jakeism.Entries
                     {
                         theEntry.AddVote(theUser);
                         thumb.ImageUrl = "images/thumbsup-clicked.png";
+                        thumb.ToolTip = "Remove Vote";
                         votes.Text = theEntry.Votes.Count.ToString();
                     }
                     service.SaveOrUpdate(theEntry);
@@ -111,11 +121,13 @@ namespace Jakeism.Entries
                     {
                         theEntry.RemoveFavorite(theUser);
                         star.ImageUrl = "images/favorite-unclicked.png";
+                        star.ToolTip = "Add to Favorites";
                     }
                     else
                     {
                         theEntry.AddFavorite(theUser);
                         star.ImageUrl = "images/favorite-clicked.png";
+                        star.ToolTip = "Remove from Favorites";
                     }
                     service.SaveOrUpdate(theEntry);
                 }
