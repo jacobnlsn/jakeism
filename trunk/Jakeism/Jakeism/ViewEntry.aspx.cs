@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using BusinessLayer.Domain;
 using BusinessLayer.Service;
 
@@ -55,10 +51,10 @@ namespace Jakeism.Entries
                     title.Text = "Jakeism #" + entry.Id;
                     body.Text = entry.EntryBody;
                     votes.Text = Votes.ToString();
-                    postedBy.Text = "posted by <a href='ViewUser.aspx?id=" + entry.User.Id + "'>" + entry.User.UserName + "</a> on " + entry.Date;
-                    var data = service.GetCommentsByEntry(entry);
+                    postedBy.Text = "posted by <a title='View User' href='ViewUser.aspx?id=" + entry.User.Id + "'>" + entry.User.UserName + "</a> on " + entry.FormattedDate + " at " + entry.FormattedTime;
                     thumb.ImageUrl = "images/thumbsup-unclicked.png";
                     star.ImageUrl = "images/favorite-unclicked.png";
+                    var data = service.GetCommentsByEntry(entry);
                     commentsList.DataSource = data;
                     commentsList.DataBind();
                     if (data.Count > 0)
@@ -146,20 +142,31 @@ namespace Jakeism.Entries
             }
             using (var service = new HibernateService())
             {
-                Comment comment = new Comment();
-                comment.CommentBody = commentBox.Text.Trim();
-                Entry entry = service.FindById<Entry>(Id);
+                var comment = new Comment {CommentBody = commentBox.Text.Trim()};
+                var entry = service.FindById<Entry>(Id);
                 comment.Entry = entry;
-                User user = service.FindUserByUserName(User.Identity.Name);
+                var user = service.FindUserByUserName(User.Identity.Name);
                 comment.User = user;
                 entry.Comments.Add(comment);
                 service.Save(comment);
-                IList<Comment> data = service.GetCommentsByEntry(entry);
+                var data = service.GetCommentsByEntry(entry);
                 commentsList.DataSource = data;
                 commentsList.DataBind();
                 if (data.Count > 0)
                     commentslbl.Text = "Comments (" + data.Count + ")";
-                Response.Redirect(Request.Url.AbsoluteUri, false);
+                commentBox.Text = "";
+                BindCommentData();
+            }
+        }
+
+        private void BindCommentData()
+        {
+            using (var service = new HibernateService())
+            {
+                var entry = service.FindById<Entry>(Id);
+                var data = service.GetCommentsByEntry(entry);
+                commentsList.DataSource = data;
+                commentsList.DataBind();
             }
         }
     }

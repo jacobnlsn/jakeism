@@ -92,6 +92,11 @@ namespace BusinessLayer.Service
             return HibernateDAO.GetCommentsByEntry(entry);
         }
 
+        public IList<T> Search<T>(string query) where T : DomainBase
+        {
+            return HibernateDAO.Search<T>(query);
+        }
+
         #endregion
 
         public IList<DomainBase> GetAllRecords(Type type)

@@ -30,6 +30,8 @@ namespace BusinessLayer.DataAccess
 
         User FindUserByUserName(string username);
 
+        IList<T> Search<T>(string query) where T : DomainBase;
+
         #endregion
 
         #region Relationships

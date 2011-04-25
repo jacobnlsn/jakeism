@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Jakeism
 {
@@ -12,6 +8,14 @@ namespace Jakeism
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Search(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(searchbox.Text.Trim()) || searchbox.Text.Equals("Search for a Jakeism..."))
+                return;
+            var query = searchbox.Text.Trim();
+            Response.Redirect("Search.aspx?query=" + query);
         }
     }
 }

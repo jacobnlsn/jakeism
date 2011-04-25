@@ -31,25 +31,27 @@ namespace Jakeism
                 entries.DataSource = service.GetAllRecords<Entry>().OrderByDescending(n => n.Date);
                 entries.DataBind();
 
-                foreach (ListViewDataItem currentItem in entries.Items)
+                foreach (var currentItem in entries.Items)
                 {
                     ((ImageButton)currentItem.FindControl("thumb")).ImageUrl = "images/thumbsup-unclicked.png";
+                    ((ImageButton)currentItem.FindControl("thumb")).ToolTip = "Vote Up";
                     ((ImageButton)currentItem.FindControl("star")).ImageUrl = "images/favorite-unclicked.png";
+                    ((ImageButton)currentItem.FindControl("star")).ToolTip = "Add to Favorites";
                 }
 
-                if (User.Identity.IsAuthenticated)
+                if (!User.Identity.IsAuthenticated) return;
+                CurrentUser = service.FindUserByUserName(User.Identity.Name);
+                foreach (var currentItem in entries.Items)
                 {
-                    CurrentUser = service.FindUserByUserName(User.Identity.Name);
-                    foreach (ListViewDataItem currentItem in entries.Items)
+                    if (CurrentUser.Votes.Contains(service.FindById(Int64.Parse(((HiddenField)currentItem.FindControl("HiddenId")).Value), typeof(Entry))))
                     {
-                        if(CurrentUser.Votes.Contains(service.FindById(Int64.Parse(((HiddenField)currentItem.FindControl("HiddenId")).Value), typeof(Entry))))
-                        {
-                            ((ImageButton)currentItem.FindControl("thumb")).ImageUrl = "images/thumbsup-clicked.png";
-                        }
-                        if (CurrentUser.Favorites.Contains(service.FindById(Int64.Parse(((HiddenField)currentItem.FindControl("HiddenId")).Value), typeof(Entry))))
-                        {
-                            ((ImageButton)currentItem.FindControl("star")).ImageUrl = "images/favorite-clicked.png";
-                        }
+                        ((ImageButton) currentItem.FindControl("thumb")).ImageUrl = "images/thumbsup-clicked.png";
+                        ((ImageButton) currentItem.FindControl("thumb")).ToolTip = "Remove Vote";
+                    }
+                    if (CurrentUser.Favorites.Contains(service.FindById(Int64.Parse(((HiddenField)currentItem.FindControl("HiddenId")).Value), typeof(Entry))))
+                    {
+                        ((ImageButton) currentItem.FindControl("star")).ImageUrl = "images/favorite-clicked.png";
+                        ((ImageButton)currentItem.FindControl("star")).ToolTip = "Remove from Favorites";
                     }
                 }
             }
@@ -112,6 +114,5 @@ namespace Jakeism
                 Response.Redirect("Register.aspx");
             }
         }
-
     }
 }

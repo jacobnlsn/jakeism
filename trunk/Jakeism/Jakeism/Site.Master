@@ -51,7 +51,7 @@
                     <table>
                         <tr>
                             <td><asp:TextBox runat="server" ID="searchbox" CssClass="searchbox" Text="Search for a Jakeism..." OnClick="this.value=''" /></td>
-                            <td><asp:Button runat="server" ID="searchbutton" CssClass="searchbutton" Text="" /></td>
+                            <td><asp:Button runat="server" ID="searchbutton" CssClass="searchbutton" ToolTip="Search" Text="" OnClick="Search" /></td>
                         </tr>
                     </table>
                 </div>
