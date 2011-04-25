@@ -35,7 +35,7 @@
                  </asp:UpdatePanel>
             </div>
             <div class="entry-title">
-                <h2><a href="ViewEntry.aspx?id=<%# Eval("Id") %>">Jakeism #<%# Eval("Id") %></a></h2>
+                <h2><a title="View Entry" href="ViewEntry.aspx?id=<%# Eval("Id") %>">Jakeism #<%# Eval("Id") %></a></h2>
             </div>
             <div class="meta">
                 <div class="favorite">
@@ -46,8 +46,8 @@
                     </asp:UpdatePanel>
                 </div>
                 <div class="info-bar">
-                    <p>posted by <a href="ViewUser.aspx?id=<%# Eval("User.Id") %>"><%# Eval("User.UserName") %></a>
-                     on <%# Eval("Date") %> | <a href="ViewEntry.aspx?id=<%# Eval("Id") %>#comments">
+                    <p>posted by <a title="View User" href="ViewUser.aspx?id=<%# Eval("User.Id") %>"><%# Eval("User.UserName") %></a>
+                     on <%# Eval("FormattedDate") %> at <%# Eval("FormattedTime") %> | <a title="View Comments" href="ViewEntry.aspx?id=<%# Eval("Id") %>#comments">
                      <%# Eval("Comments.Count") %> comments</a></p>
                 </div>
             </div>

@@ -90,6 +90,13 @@ namespace BusinessLayer.DataAccess
                 .UniqueResult<User>();
         }
 
+        public IList<T> Search<T>(string query) where T : DomainBase
+        {
+            return Session.CreateCriteria<T>()
+                .Add(Restrictions.InsensitiveLike("EntryBody", query, MatchMode.Anywhere))
+                .List<T>();
+        }
+
         #endregion
 
         #region Relationships

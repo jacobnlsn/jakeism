@@ -16,7 +16,7 @@
             </LayoutTemplate>
 
             <ItemTemplate>
-                <a runat='server' href='<%# String.Format("ViewEntry.aspx?id={0}", Eval("Id")) %>'>Jakeism #<%# Eval("Id") %></a><br />
+                <a href='<%# String.Format("ViewEntry.aspx?id={0}", Eval("Id")) %>'>Jakeism #<%# Eval("Id") %></a><br />
                 <%# Eval("EntryBody") %><br /><br />
             </ItemTemplate>
 
@@ -36,12 +36,32 @@
             </LayoutTemplate>
 
             <ItemTemplate>
-                <a runat='server' href='<%# String.Format("ViewEntry.aspx?id={0}#comment-{1}", Eval("Entry.Id"), Eval("Id")) %>'>Jakeism #<%# Eval("Entry.Id") %></a><br />
+                <a href='<%# String.Format("ViewEntry.aspx?id={0}#comment-{1}", Eval("Entry.Id"), Eval("Id")) %>'>Jakeism #<%# Eval("Entry.Id") %></a><br />
                 <%# Eval("CommentBody") %><br /><br />
             </ItemTemplate>
 
             <EmptyDataTemplate>
                 <div>No comments</div>
+            </EmptyDataTemplate>
+
+        </asp:ListView>
+    </div>
+
+    <div class="left">
+        <asp:Label runat="server" ID="favoriteslbl" Text="<h3>Favorites</h3>" /><br />
+        <asp:ListView runat="server" ID="favorites">
+        
+            <LayoutTemplate>
+                <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
+            </LayoutTemplate>
+
+            <ItemTemplate>
+                <a href='<%# String.Format("ViewEntry.aspx?id={0}", Eval("Id")) %>'>Jakeism #<%# Eval("Id") %></a><br />
+                <%# Eval("EntryBody") %><br /><br />
+            </ItemTemplate>
+
+            <EmptyDataTemplate>
+                <div>No favorites</div>
             </EmptyDataTemplate>
 
         </asp:ListView>

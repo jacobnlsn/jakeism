@@ -44,6 +44,16 @@ namespace BusinessLayer.Domain
             set { this.date = value; }
         }
 
+        public virtual string FormattedDate
+        {
+            get { return this.date.ToString("M/d/yyyy"); }
+        }
+
+        public virtual string FormattedTime
+        {
+            get { return this.date.ToString("h:mm tt"); }
+        }
+
         public virtual ISet<Comment> Comments
         {
             get { return this.comments; }

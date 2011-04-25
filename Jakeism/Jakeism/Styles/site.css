@@ -187,6 +187,7 @@ h3 {
 	padding: 0px;
 	border: none;
 	vertical-align: middle;
+	cursor: pointer;
 }
 
 /* Body */
@@ -200,6 +201,7 @@ h3 {
 	background-color: #FFFFFF;
 	text-align: left;
 	padding: 17px;
+	overflow: hidden;
 }
 
 .entry {
@@ -351,6 +353,7 @@ h3 {
     background-position: right top;
     color: #FFFFFF;
     border-left: 2px solid #676767;
+    overflow: hidden;
 }
 
 .comment a {

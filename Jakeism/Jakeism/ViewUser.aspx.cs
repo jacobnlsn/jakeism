@@ -42,10 +42,12 @@ namespace Jakeism.Users
                 else
                 {
                     userTitle.Text = DomainUser.UserName;
-                    entries.DataSource = service.GetEntriesByUser(DomainUser).Reverse();
+                    entries.DataSource = service.GetEntriesByUser(DomainUser).OrderByDescending(n => n.Date);
                     entries.DataBind();
-                    comments.DataSource = service.GetCommentsByUser(DomainUser).Reverse();
+                    comments.DataSource = service.GetCommentsByUser(DomainUser).OrderByDescending(n => n.Date);
                     comments.DataBind();
+                    favorites.DataSource = DomainUser.Favorites.OrderByDescending(n => n.Date);
+                    favorites.DataBind();
                 }
             }
         }

@@ -38,6 +38,8 @@ namespace BusinessLayer.Service
 
         IList<Comment> GetCommentsByEntry(Entry entry);
 
+        IList<T> Search<T>(string query) where T : DomainBase;
+
         #endregion
 
         IList<DomainBase> GetAllRecords(Type type);
