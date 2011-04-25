@@ -30,6 +30,10 @@ body {
     font-weight: bold;
 }
 
+.inactive {
+    color: #CCCCCC;
+}
+
 a {
     color: #6e78a9;
 }

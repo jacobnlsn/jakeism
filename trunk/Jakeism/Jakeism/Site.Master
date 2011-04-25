@@ -44,8 +44,8 @@
                         <li><a href="Default.aspx">Home</a></li>
                         <li><a href="CreateEntry.aspx">Add Jakeism</a></li>
                         <li><a href="TopEntries.aspx">Top Jakeisms</a></li>
-                        <li><a href="#">The Archive</a></li>
-                        <li><a href="#">Users</a></li>
+                        <li><span class="inactive">The Archive</span></li>
+                        <li><a href="ViewUsers.aspx">Users</a></li>
                     </ul>
                 </div>
                 <div id="search">
@@ -66,7 +66,7 @@
                 <p>&copy; Copyright 2011 Jakeism.info. All Rights Reserved.</p> 
             </div>
             <div id="footer-right">
-                <p><a href="#">users</a> | <a href="#">the archive</a> | <a href="#">top jakeisms</a> | <a href="CreateEntry.aspx">add jakeism</a> | <a href="Default.aspx">home</a></p>
+                <p><a href="ViewUsers.aspx">users</a> | the archive | <a href="TopEntries.aspx">top jakeisms</a> | <a href="CreateEntry.aspx">add jakeism</a> | <a href="Default.aspx">home</a></p>
             </div>
         </div>
         <div class="clear"></div>
