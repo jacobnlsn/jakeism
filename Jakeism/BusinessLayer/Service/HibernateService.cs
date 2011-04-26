@@ -73,6 +73,11 @@ namespace BusinessLayer.Service
             return HibernateDAO.FindUserByUserName(username);
         }
 
+        public IList<T> Search<T>(string query) where T : DomainBase
+        {
+            return HibernateDAO.Search<T>(query);
+        }
+
         #endregion
 
         #region Relationships
@@ -92,9 +97,14 @@ namespace BusinessLayer.Service
             return HibernateDAO.GetCommentsByEntry(entry);
         }
 
-        public IList<T> Search<T>(string query) where T : DomainBase
+        public int CountVotesReceived(User user)
         {
-            return HibernateDAO.Search<T>(query);
+            return HibernateDAO.CountVotesReceived(user);
+        }
+
+        public int CountFavoritesReceived(User user)
+        {
+            return HibernateDAO.CountFavoritesReceived(user);
         }
 
         #endregion

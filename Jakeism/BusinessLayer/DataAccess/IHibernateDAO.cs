@@ -42,6 +42,10 @@ namespace BusinessLayer.DataAccess
 
         IList<Comment> GetCommentsByEntry(Entry entry);
 
+        int CountVotesReceived(User user);
+
+        int CountFavoritesReceived(User user);
+
         #endregion
 
         IList<DomainBase> GetAllRecords(Type type);

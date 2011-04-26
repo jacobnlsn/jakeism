@@ -17,32 +17,73 @@ namespace Jakeism.Users
             set;
         }
 
+        protected string MemberFor
+        {
+            get;
+            set;
+        }
+
+        protected int JakeismsSubmitted
+        {
+            get;
+            set;
+        }
+
+        protected int CommentsMade
+        {
+            get;
+            set;
+        }
+
+        protected int VotesCasted
+        {
+            get;
+            set;
+        }
+
+        protected int FavoritesAdded
+        {
+            get;
+            set;
+        }
+
+        protected int VotesReceived
+        {
+            get;
+            set;
+        }
+
+        protected int FavoritesReceived
+        {
+            get;
+            set;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             using (var service = new HibernateService())
             {
                 if (Request.QueryString["id"] != null)
                 {
-                    long id = Int64.Parse(Request.QueryString["id"]);
+                    var id = Int64.Parse(Request.QueryString["id"]);
                     DomainUser = service.FindById<User>(id);
                 }
                 else if (Request.QueryString["user"] != null)
                 {
-                    string username = Request.QueryString["user"];
+                    var username = Request.QueryString["user"];
                     DomainUser = service.FindUserByUserName(username);
                 }
                 if (DomainUser == null)
                 {
                     userTitle.Text = "User Not Found";
-                    entrieslbl.Visible = false;
-                    entries.Visible = false;
-                    commentslbl.Visible = false;
-                    comments.Visible = false;
-                    favoriteslbl.Visible = false;
-                    favorites.Visible = false;
+                    userPanel.Visible = false;
                 }
                 else
                 {
+                    JakeismsSubmitted = DomainUser.Entries.Count;
+                    CommentsMade = DomainUser.Comments.Count;
+                    VotesCasted = DomainUser.Votes.Count;
+                    FavoritesAdded = DomainUser.Favorites.Count;
                     userTitle.Text = DomainUser.UserName;
                     entries.DataSource = service.GetEntriesByUser(DomainUser).OrderByDescending(n => n.Date);
                     entries.DataBind();

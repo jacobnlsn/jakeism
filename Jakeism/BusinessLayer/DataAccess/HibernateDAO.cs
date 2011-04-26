@@ -122,6 +122,18 @@ namespace BusinessLayer.DataAccess
                 .List<Comment>();
         }
 
+        public int CountVotesReceived(User user)
+        {
+            // TODO
+            return 0;
+        }
+
+        public int CountFavoritesReceived(User user)
+        {
+            // TODO
+            return 0;
+        }
+
         #endregion
 
         public IList<DomainBase> GetAllRecords(Type type)

@@ -1,70 +1,116 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewUser.aspx.cs" Inherits="Jakeism.Users.ViewUser" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <title>Jakeism | View User</title>
+    <script type="text/javascript" src="Scripts/tabs.js"></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 <h2><asp:Label runat="server" ID="userTitle" /></h2><br /><br />
 
-    <div class="page-left">
-        <asp:Label runat="server" ID="entrieslbl" Text="<h3>Jakeisms</h3>" /><br />
-        <asp:ListView runat="server" ID="entries">
+  <asp:Panel runat="server" ID="userPanel">
+
+    <div class="tabs">
+
+        <ul class="tabNavigation">
+            <li><a href="#stats-tab">Stats</a></li>
+            <li><a href="#jakeisms-tab">Jakeisms</a></li>
+            <li><a href="#comments-tab">Comments</a></li>
+            <li><a href="#favorites-tab">Favorites</a></li>
+        </ul>
+
+        <div id="jakeisms-tab">
+            <asp:ListView runat="server" ID="entries">
         
-            <LayoutTemplate>
-                <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
-            </LayoutTemplate>
+                <LayoutTemplate>   
+                    <asp:PlaceHolder runat="server" ID="itemPlaceholder" />     
+                </LayoutTemplate>
 
-            <ItemTemplate>
-                <a href='<%# String.Format("ViewEntry.aspx?id={0}", Eval("Id")) %>'>Jakeism #<%# Eval("Id") %></a><br />
-                <%# Eval("EntryBody") %><br /><br />
-            </ItemTemplate>
+                <ItemTemplate>
+                    <h4><a title="View Entry" href="ViewEntry.aspx?id=<%# Eval("Id") %>">Jakeism #<%# Eval("Id") %></a></h4>
+                    <p><%# Eval("EntryBody") %></p><br />
+                </ItemTemplate>
 
-            <EmptyDataTemplate>
-                <div>No entries</div>
-            </EmptyDataTemplate>
+                <EmptyDataTemplate>
+                    <div><p>No entries</p></div>
+                </EmptyDataTemplate>
 
-        </asp:ListView>
+            </asp:ListView>
+        </div>
+
+        <div id="comments-tab">
+            <asp:ListView runat="server" ID="comments">
+        
+                <LayoutTemplate>   
+                    <asp:PlaceHolder runat="server" ID="itemPlaceholder" />     
+                </LayoutTemplate>
+
+                <ItemTemplate>
+                    <h4><a title="View Entry" href="ViewEntry.aspx?id=<%# Eval("Entry.Id") %>#comment-<%# Eval("Id") %>">Jakeism #<%# Eval("Entry.Id") %></a></h4>
+                    <p><%# Eval("CommentBody") %></p><br />
+                </ItemTemplate>
+
+                <EmptyDataTemplate>
+                    <div><p>No comments</p></div>
+                </EmptyDataTemplate>
+
+            </asp:ListView>
+        </div>
+
+        <div id="favorites-tab">
+            <asp:ListView runat="server" ID="favorites">
+        
+                <LayoutTemplate>   
+                    <asp:PlaceHolder runat="server" ID="itemPlaceholder" />     
+                </LayoutTemplate>
+
+                <ItemTemplate>
+                    <h4><a title="View Entry" href="ViewEntry.aspx?id=<%# Eval("Id") %>">Jakeism #<%# Eval("Id") %></a> posted by <a title="View User" href="ViewUser.aspx?id=<%# Eval("User.Id") %>"><%# Eval("User.UserName") %></a></h4>
+                    <p><%# Eval("EntryBody") %></p><br />
+                </ItemTemplate>
+
+                <EmptyDataTemplate>
+                    <div><p>No favorites</p></div>
+                </EmptyDataTemplate>
+
+            </asp:ListView>
+        </div>
+
+        <div id="stats-tab">
+            <table>
+                <tr>
+                    <td>Member For</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Jakeisms Submitted</td>
+                    <td><%= JakeismsSubmitted %></td>
+                </tr>
+                <tr>
+                    <td>Comments Made</td>
+                    <td><%= CommentsMade %></td>
+                </tr>
+                <tr>
+                    <td>Votes Casted</td>
+                    <td><%= VotesCasted %></td>
+                </tr>
+                <tr>
+                    <td>Favorites Added</td>
+                    <td><%= FavoritesAdded %></td>
+                </tr>
+                <tr>
+                    <td>Votes Received</td>
+                    <td><%= VotesReceived %></td>
+                </tr>
+                <tr>
+                    <td>Jakeisms Favorited by Others</td>
+                    <td><%= FavoritesReceived %></td>
+                </tr>
+            </table>
+        </div>
+
     </div>
 
-    <div class="page-right">
-        <asp:Label runat="server" ID="commentslbl" Text="<h3>Comments</h3>" /><br />
-        <asp:ListView runat="server" ID="comments">
-        
-            <LayoutTemplate>
-                <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
-            </LayoutTemplate>
-
-            <ItemTemplate>
-                <a href='<%# String.Format("ViewEntry.aspx?id={0}#comment-{1}", Eval("Entry.Id"), Eval("Id")) %>'>Jakeism #<%# Eval("Entry.Id") %></a><br />
-                <%# Eval("CommentBody") %><br /><br />
-            </ItemTemplate>
-
-            <EmptyDataTemplate>
-                <div>No comments</div>
-            </EmptyDataTemplate>
-
-        </asp:ListView>
-    </div>
-
-    <div class="left">
-        <asp:Label runat="server" ID="favoriteslbl" Text="<h3>Favorites</h3>" /><br />
-        <asp:ListView runat="server" ID="favorites">
-        
-            <LayoutTemplate>
-                <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
-            </LayoutTemplate>
-
-            <ItemTemplate>
-                <a href='<%# String.Format("ViewEntry.aspx?id={0}", Eval("Id")) %>'>Jakeism #<%# Eval("Id") %></a><br />
-                <%# Eval("EntryBody") %><br /><br />
-            </ItemTemplate>
-
-            <EmptyDataTemplate>
-                <div>No favorites</div>
-            </EmptyDataTemplate>
-
-        </asp:ListView>
-    </div>
+  </asp:Panel>
 
 </asp:Content>

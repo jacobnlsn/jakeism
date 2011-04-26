@@ -13,9 +13,9 @@ body {
 	text-align: center;
     margin: 0px auto;
 	padding: 0px;
-	-moz-box-shadow: 0px 3px 0px 3px #666;
-	-webkit-box-shadow: 0px 3px 0px 3px #666;
-	box-shadow: 0px 3px 0px 3px #666;
+	-moz-box-shadow: 0 0 5px #666;
+	-webkit-box-shadow: 0 0 5px #666;
+	box-shadow: 0 0 5px #666;
 }
 
 .clear {
@@ -55,6 +55,11 @@ h3 {
     font-size: 14px;
     font-weight: bold;
     margin: 0px;
+}
+
+h4 {
+    font-size: 12px;
+    margin-bottom: 3px;
 }
 
 /* Header */
@@ -455,6 +460,99 @@ h3 {
 
 #addcomment textarea {
     width: 740px;
+}
+
+UL.tabNavigation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ UL.tabNavigation LI {
+     display: inline;
+}
+
+UL.tabNavigation LI A {
+    padding: 5px 7px;
+    background-color: #828ab2;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+UL.tabNavigation LI A.selected,
+UL.tabNavigation LI A:hover {
+    background-color: #4d5683;
+    color: #9ad1db;
+    padding-top: 10px;
+}
+
+UL.tabNavigation LI A.selected {
+    font-weight: bold;
+}
+                
+UL.tabNavigation LI A:focus {
+    outline: 0;
+}
+
+#stats-tab {
+    background-color: #4d5683;
+    margin-top: 6px;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+#stats-tab a {
+    color: #9ad1db;
+}
+
+#stats-tab a:hover {
+    color: #9099c8;
+}
+
+#jakeisms-tab {
+    background-color: #4d5683;
+    margin-top: 6px;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+#jakeisms-tab a {
+    color: #9ad1db;
+}
+
+#jakeisms-tab a:hover {
+    color: #9099c8;
+}
+
+#comments-tab {
+    background-color: #4d5683;
+    margin-top: 6px;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+#comments-tab a {
+    color: #9ad1db
+}
+
+#comments-tab a:hover {
+    color: #9099c8;
+}
+
+#favorites-tab {
+    background-color: #4d5683;
+    margin-top: 6px;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+#favorites-tab a {
+    color: #9ad1db;
+}
+
+#favorites-tab a:hover {
+    color: #9099c8;
 }
 
 /* Footer */

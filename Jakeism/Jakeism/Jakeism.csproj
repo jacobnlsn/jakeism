@@ -113,6 +113,7 @@
     <Content Include="images\user.png" />
     <Content Include="Scripts\jquery.tabSlideOut.v1.3.js" />
     <Content Include="Scripts\slider.js" />
+    <Content Include="Scripts\tabs.js" />
     <Content Include="Search.aspx" />
     <Content Include="Styles\admin.css" />
     <Content Include="Styles\site.css" />

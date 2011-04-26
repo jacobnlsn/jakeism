@@ -22,13 +22,13 @@ namespace Jakeism.Users {
         protected global::System.Web.UI.WebControls.Label userTitle;
         
         /// <summary>
-        /// entrieslbl control.
+        /// userPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label entrieslbl;
+        protected global::System.Web.UI.WebControls.Panel userPanel;
         
         /// <summary>
         /// entries control.
@@ -40,15 +40,6 @@ namespace Jakeism.Users {
         protected global::System.Web.UI.WebControls.ListView entries;
         
         /// <summary>
-        /// commentslbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label commentslbl;
-        
-        /// <summary>
         /// comments control.
         /// </summary>
         /// <remarks>
@@ -56,15 +47,6 @@ namespace Jakeism.Users {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView comments;
-        
-        /// <summary>
-        /// favoriteslbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label favoriteslbl;
         
         /// <summary>
         /// favorites control.
