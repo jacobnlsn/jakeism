@@ -33,8 +33,8 @@ namespace Jakeism
                 return;
             }
             var fromEmail = email.Text.Trim();
-            var message = feedbackMsg.Text.Trim();
-            Util.SendEmail("Jakeism Feedback", message, fromEmail, Constants.FEEDBACK_EMAIL);
+            var message = "Sent By: " + name.Text.Trim() + " (" + fromEmail + ")\n\n" + feedbackMsg.Text.Trim();
+            Util.SendEmail("Jakeism Feedback", message, Constants.FEEDBACK_EMAIL);
         }
     }
 }
