@@ -10,11 +10,14 @@
 
     <div class="page-left">
         <p>User Name</p>
-        <asp:TextBox runat="server" ID="usernameField" /><br /><br />
+        <asp:TextBox runat="server" ID="usernameField" />
+        <asp:Label runat="server" ID="badName" ForeColor="Red" Visible="false" Text="User name is already taken" /><br /><br />
         <p>Email Address</p>
-        <asp:TextBox runat="server" ID="emailField" /><br /><br />
+        <asp:TextBox runat="server" ID="emailField" />
+        <asp:Label runat="server" ID="badEmail" ForeColor="Red" Visible="false" Text="Invalid email address" /><br /><br />
         <p>Password</p>
-        <asp:TextBox runat="server" ID="passwordField" TextMode="Password" /><br /><br />
+        <asp:TextBox runat="server" ID="passwordField" TextMode="Password" />
+        <asp:Label runat="server" ID="badPassword" ForeColor="Red" Visible="false" Text="Passwords must match" /><br /><br />
         <p>Confirm Password</p>
         <asp:TextBox runat="server" ID="confirmPassword" TextMode="Password" />
         <asp:Button runat="server" ID="submit" Text="Submit" OnClick="Register_User" />

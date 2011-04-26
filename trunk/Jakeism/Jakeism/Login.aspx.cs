@@ -14,32 +14,36 @@ namespace Jakeism.Users
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            fail.Visible = false;
         }
 
         protected void User_Login(object sender, EventArgs e)
         {
-            string username = usernameField.Text.Trim();
-            string password = passwordField.Text.Trim();
+            var username = usernameField.Text.Trim();
+            var password = passwordField.Text.Trim();
             using (var service = new HibernateService())
             {
-                User exists = service.FindUserByUserName(username);
+                var exists = service.FindUserByUserName(username);
                 if (exists != null)
                 {
-                    string dbPassword = exists.Password;
-                    string salt = dbPassword.Substring(dbPassword.Length - Constants.SALT_SIZE);
-                    string hashedPassword = Util.CreatePasswordHash(password, salt);
+                    var dbPassword = exists.Password;
+                    var salt = dbPassword.Substring(dbPassword.Length - Constants.SALT_SIZE);
+                    var hashedPassword = Util.CreatePasswordHash(password, salt);
                     if (hashedPassword.Equals(exists.Password))
                     {
                         FormsAuthenticationService.SignIn(username, remember.Checked);
                         Response.Redirect("~/Default.aspx");
                     }
                     else
-                        notFound.Text = "Incorrect password";
+                    {
+                        fail.Text = "Incorrect password";
+                        fail.Visible = true;
+                    }
                 }
                 else
                 {
-                    notFound.Text = "Account not found";
+                    fail.Text = "Account not found";
+                    fail.Visible = true;
                 }
             }
         }

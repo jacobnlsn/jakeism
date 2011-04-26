@@ -22,6 +22,15 @@ namespace Jakeism.Users {
         protected global::System.Web.UI.WebControls.TextBox usernameField;
         
         /// <summary>
+        /// badName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label badName;
+        
+        /// <summary>
         /// emailField control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace Jakeism.Users {
         protected global::System.Web.UI.WebControls.TextBox emailField;
         
         /// <summary>
+        /// badEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label badEmail;
+        
+        /// <summary>
         /// passwordField control.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace Jakeism.Users {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox passwordField;
+        
+        /// <summary>
+        /// badPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label badPassword;
         
         /// <summary>
         /// confirmPassword control.

@@ -16,8 +16,8 @@
         <asp:TextBox runat="server" ID="passwordField" TextMode="Password" />
         <asp:Button runat="server" ID="login" Text="Login" OnClick="User_Login" />
         <asp:CheckBox runat="server" ID="remember" Text="Remember me" />
-        <br />
-        <asp:Label runat="server" ID="notFound" />
+        <br /><br />
+        <asp:Label runat="server" ID="fail" Visible="false" ForeColor="Red" />
       </asp:Panel>
     </div>
     <div class="page-right">
