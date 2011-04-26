@@ -56,7 +56,7 @@ namespace BusinessLayer.Util
             return re.IsMatch(inputEmail);
         }
 
-        public static void SendEmail(string subject, string message, string fromEmail, string toEmail)
+        public static void SendEmail(string subject, string message, string toEmail)
         {
             var mail = new MailMessage {From = new MailAddress(Constants.CREDENTIALS_USERNAME)};
             mail.To.Add(toEmail);
