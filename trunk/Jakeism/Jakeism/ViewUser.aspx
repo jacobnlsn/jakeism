@@ -20,6 +20,7 @@
         </ul>
 
         <div id="jakeisms-tab">
+            <br />
             <asp:ListView runat="server" ID="entries">
         
                 <LayoutTemplate>   
@@ -39,6 +40,7 @@
         </div>
 
         <div id="comments-tab">
+            <br />
             <asp:ListView runat="server" ID="comments">
         
                 <LayoutTemplate>   
@@ -58,6 +60,7 @@
         </div>
 
         <div id="favorites-tab">
+            <br />
             <asp:ListView runat="server" ID="favorites">
         
                 <LayoutTemplate>   
@@ -77,10 +80,11 @@
         </div>
 
         <div id="stats-tab">
-            <table>
+            <br />
+            <table id="stats-table">
                 <tr>
                     <td>Member For</td>
-                    <td></td>
+                    <td><%= MemberFor %></td>
                 </tr>
                 <tr>
                     <td>Jakeisms Submitted</td>
