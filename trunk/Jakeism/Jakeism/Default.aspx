@@ -7,8 +7,6 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 
-<asp:ScriptManager EnablePartialRendering="true" ID="ScriptManager1" runat="server"></asp:ScriptManager>
-
 <asp:ListView runat="server" ID="entries">
         
     <LayoutTemplate>   

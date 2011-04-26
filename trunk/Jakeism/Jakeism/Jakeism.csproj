@@ -95,6 +95,7 @@
     <Content Include="Admin\ManageEntry.aspx" />
     <Content Include="Admin\ManageUsers.aspx" />
     <Content Include="CreateEntry.aspx" />
+    <Content Include="images\feedback.gif" />
     <Content Include="images\login.png" />
     <Content Include="images\quotes-blue.gif" />
     <Content Include="images\quotes-gold.gif" />
@@ -106,7 +107,10 @@
     <Content Include="images\thumbsup-clicked.png" />
     <Content Include="images\thumbsup-unclicked.png" />
     <Content Include="images\user.png" />
+    <Content Include="Scripts\jquery.tabSlideOut.v1.3.js" />
+    <Content Include="Scripts\slider.js" />
     <Content Include="Search.aspx" />
+    <Content Include="Styles\admin.css" />
     <Content Include="Styles\site.css" />
     <Content Include="TopEntries.aspx" />
     <Content Include="ViewEntry.aspx" />

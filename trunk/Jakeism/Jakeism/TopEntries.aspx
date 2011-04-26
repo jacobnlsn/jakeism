@@ -5,8 +5,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:ScriptManager EnablePartialRendering="true" ID="ScriptManager1" runat="server"></asp:ScriptManager>
-
     <h2>Top Jakeisms</h2>
 
     <asp:ListView runat="server" ID="topEntries">
