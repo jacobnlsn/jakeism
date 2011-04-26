@@ -38,6 +38,8 @@ namespace Jakeism.Users
                     entries.Visible = false;
                     commentslbl.Visible = false;
                     comments.Visible = false;
+                    favoriteslbl.Visible = false;
+                    favorites.Visible = false;
                 }
                 else
                 {

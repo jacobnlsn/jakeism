@@ -208,6 +208,29 @@ h3 {
 	overflow: hidden;
 }
 
+.slide-out-div {
+    padding: 10px;
+    width: 250px;
+    height: 250px;
+    background: #4d5683;
+    border: 1px solid #8389a8;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+.handle {
+    margin-top: 25px;
+}
+
+.feedback-header {
+    margin-bottom: 5px;
+}
+
+.feedback-box {
+    width: 90%;
+    margin-bottom: 10px;
+}
+
 .entry {
 	float: left;
 	color: #FFFFFF;

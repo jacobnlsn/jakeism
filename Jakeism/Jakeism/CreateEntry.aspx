@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 
     <title>Jakeism | Add Jakeism</title>
-    <script type="text/javascript" src="Scripts/jquery-1.4.1.js"></script>
     <script type="text/javascript" src="Scripts/forms.js"></script>
 
 </asp:Content>

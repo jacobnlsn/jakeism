@@ -3,14 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 
     <title>Jakeism | View Entry</title>
-    <script type="text/javascript" src="scripts/jquery-1.4.1.js"></script>
     <script type="text/javascript" src="scripts/forms.js"></script>
 
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-<asp:ScriptManager EnablePartialRendering="true" ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
 <h2><asp:Label runat="server" ID="notFound" Text="Entry Not Found" Visible="false" /></h2>
 <asp:Label runat="server" ID="notFoundMsg" Text="<br /><p>Sorry, the Jakeism you seek does not exist.</p>" Visible="false" />
