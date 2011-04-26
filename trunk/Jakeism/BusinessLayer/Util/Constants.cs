@@ -13,7 +13,7 @@ namespace BusinessLayer.Util
 
         // Email
         public const string SMTP_SERVER = "mail.clarionmediadev.com";
-        public const string FEEDBACK_EMAIL = "ttreat31@yahoo.com";
+        public const string FEEDBACK_EMAIL = "ttreat31@gmail.com";
         public const string CREDENTIALS_USERNAME = "jakeism@clarionmediadev.com";
         public const string CREDENTIALS_PASSWORD = "jpostmaster1";
 
