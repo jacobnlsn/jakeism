@@ -124,28 +124,18 @@ namespace BusinessLayer.DataAccess
 
         public int CountVotesReceived(User user)
         {
-            int voteCount = 0;
-            List<Entry> usersEntries = (List<Entry>)Session.CreateCriteria<Entry>()
+            var usersEntries = Session.CreateCriteria<Entry>()
                         .Add(Restrictions.Eq("User", user))
                         .List<Entry>();
-            foreach (Entry entry in usersEntries)
-            {
-                voteCount += entry.Votes.Count;
-            }
-            return voteCount;
+            return usersEntries.Sum(entry => entry.Votes.Count);
         }
 
         public int CountFavoritesReceived(User user)
         {
-            int favoriteCount = 0;
-            List<Entry> usersEntries = (List<Entry>)Session.CreateCriteria<Entry>()
+            var usersEntries = Session.CreateCriteria<Entry>()
                         .Add(Restrictions.Eq("User", user))
                         .List<Entry>();
-            foreach (Entry entry in usersEntries)
-            {
-                favoriteCount += entry.Favorites.Count;
-            }
-            return favoriteCount;
+            return usersEntries.Sum(entry => entry.Favorites.Count);
         }
 
         #endregion
