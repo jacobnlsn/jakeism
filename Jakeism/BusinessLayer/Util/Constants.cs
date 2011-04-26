@@ -23,5 +23,9 @@ namespace BusinessLayer.Util
 
         // Comments
         public const bool ADMIN_COMMENTS = false;
+
+        // Time
+        public const double YEAR_IN_DAYS = 365.2425;
+        public const double MONTH_IN_DAYS = 30.436875;
     }
 }

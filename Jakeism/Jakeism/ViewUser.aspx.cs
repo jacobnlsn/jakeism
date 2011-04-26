@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinessLayer.Domain;
 using BusinessLayer.Service;
+using BusinessLayer.Util;
 
 namespace Jakeism.Users
 {
@@ -18,6 +19,26 @@ namespace Jakeism.Users
         }
 
         protected string MemberFor
+        {
+            get
+            {
+                var span = DateTime.Now.Subtract(Registered);
+                var years = span.GetYears();
+                var months = span.GetMonths(years);
+                var days = (int) ((span.Days - (years * Constants.YEAR_IN_DAYS)) - (months * Constants.MONTH_IN_DAYS));
+                if (days == 0)
+                    days = 1;
+                var ret = "";
+                if (years > 0)
+                    ret += years == 1 ? years + " year " : years + " years ";
+                if (months > 0)
+                    ret += months == 1 ? months + " month " : months + " months ";
+                ret += days == 1 ? days + " day " : days + " days";
+                return ret;
+            }
+        }
+
+        protected DateTime Registered
         {
             get;
             set;
@@ -80,10 +101,13 @@ namespace Jakeism.Users
                 }
                 else
                 {
+                    Registered = DomainUser.DateRegistered;
                     JakeismsSubmitted = DomainUser.Entries.Count;
                     CommentsMade = DomainUser.Comments.Count;
                     VotesCasted = DomainUser.Votes.Count;
                     FavoritesAdded = DomainUser.Favorites.Count;
+                    VotesReceived = service.CountVotesReceived(DomainUser);
+                    FavoritesReceived = service.CountFavoritesReceived(DomainUser);
                     userTitle.Text = DomainUser.UserName;
                     entries.DataSource = service.GetEntriesByUser(DomainUser).OrderByDescending(n => n.Date);
                     entries.DataBind();

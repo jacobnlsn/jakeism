@@ -510,6 +510,18 @@ UL.tabNavigation LI A:focus {
     color: #9099c8;
 }
 
+#stats-table {
+    font-size: 14px;
+    width: 70%;
+}
+
+#stats-table tr td 
+{
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+
 #jakeisms-tab {
     background-color: #4d5683;
     margin-top: 6px;

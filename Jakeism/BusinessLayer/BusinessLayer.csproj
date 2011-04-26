@@ -89,6 +89,7 @@
     <Compile Include="Service\HibernateService.cs" />
     <Compile Include="Service\IHibernateService.cs" />
     <Compile Include="Util\Constants.cs" />
+    <Compile Include="Util\ExtensionMethods.cs" />
     <Compile Include="Util\HibernateUtil.cs" />
     <Compile Include="Util\Util.cs" />
   </ItemGroup>
