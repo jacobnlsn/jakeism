@@ -1,13 +1,17 @@
 ﻿using System;
 using BusinessLayer.Util;
+using System.Web.UI.WebControls;
 
 namespace Jakeism
 {
     public partial class SiteMaster : System.Web.UI.MasterPage
     {
+
+        public string feedbackPostback;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            feedbackPostback = "false";
         }
 
         protected void Search(object sender, EventArgs e)
@@ -20,6 +24,7 @@ namespace Jakeism
 
         protected void Submit_Feedback(object sender, EventArgs e)
         {
+            feedbackPostback = "true";
             if (String.IsNullOrEmpty(name.Text.Trim()) || String.IsNullOrEmpty(email.Text.Trim()) || String.IsNullOrEmpty(feedbackMsg.Text.Trim()))
             {
                 fail.Text = "Please fill in all fields";
