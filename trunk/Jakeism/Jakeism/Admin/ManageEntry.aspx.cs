@@ -68,7 +68,10 @@ namespace Jakeism.Admin
                 Entry entry = (Entry)service.FindById(Id, typeof(Entry));
                 entry.EntryBody = entryBody.Text.Trim();
                 service.SaveOrUpdate(entry);
+                entryBody.Text = entry.EntryBody;
             }
+
+            
         }
 
     }

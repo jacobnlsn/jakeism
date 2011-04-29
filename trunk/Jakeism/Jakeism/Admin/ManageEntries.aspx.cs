@@ -15,7 +15,10 @@ namespace Jakeism.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             ((Admin)this.Master).checkIfAdmin(Page);
-            PopulateEntries();
+            if (!IsPostBack)
+            {
+                PopulateEntries();
+            }
         }
 
         protected void Delete_Entries(object sender, EventArgs e)
@@ -35,6 +38,7 @@ namespace Jakeism.Admin
                     }
                 }
             }
+            PopulateEntries();
         }
 
         protected void Modify_Entry(object sender, EventArgs e)
