@@ -6,8 +6,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <h2>Top Jakeisms</h2>
+    
+    <h2>Top Jakeisms</h2><br />
     <custom:EntryList runat="server" ID="entryList" /> 
 
 </asp:Content>

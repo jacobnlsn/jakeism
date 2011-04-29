@@ -29,6 +29,6 @@ namespace BusinessLayer.Util
         public const double MONTH_IN_DAYS = 30.436875;
 
         // UI
-        public enum SORT_ORDER { VOTES, FAVORITES, COMMENTS, DATE };
+        public enum SORT_ORDER { VOTES, FAVORITES, COMMENTS, DATE, USER };
     }
 }

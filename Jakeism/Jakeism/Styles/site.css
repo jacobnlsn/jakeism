@@ -29,6 +29,11 @@ body {
     float: left;
 }
 
+.right
+{
+    float: right;
+}
+
 .bold {
     font-weight: bold;
 }
