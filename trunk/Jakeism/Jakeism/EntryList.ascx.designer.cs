@@ -10,15 +10,15 @@
 namespace Jakeism {
     
     
-    public partial class Search {
+    public partial class EntryList {
         
         /// <summary>
-        /// entryList control.
+        /// entries control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Jakeism.EntryList entryList;
+        protected global::System.Web.UI.WebControls.ListView entries;
     }
 }

@@ -13,12 +13,12 @@ namespace Jakeism {
     public partial class TopEntries {
         
         /// <summary>
-        /// topEntries control.
+        /// entryList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView topEntries;
+        protected global::Jakeism.EntryList entryList;
     }
 }
