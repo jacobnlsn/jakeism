@@ -26,39 +26,38 @@ namespace Jakeism.Admin
             List<Comment> returnComments = new List<Comment>();
             using (var service = new HibernateService())
             {
-            
-            long id = 0;
-            if (tempId != null)
-            {
-                id = Int64.Parse(tempId);
-            }
-            
-                allComments = (List<Comment>)service.GetAllRecords<Comment>();
-            
-            if (type == "entry")
-            {
-                foreach (Comment currentComment in allComments)
-                {
-                    if (currentComment.Entry.Id == id)
-                    {
-                        returnComments.Add(currentComment);
-                    }
-                }
-            }
-            if (type == "user")
-            {
-                foreach (Comment currentComment in allComments)
-                {
-                    if (currentComment.User.Id == id)
-                    {
-                        returnComments.Add(currentComment);
-                    }
-                }
-            }
-            }
 
-            comments.DataSource = returnComments;
-            comments.DataBind();
+                long id = 0;
+                if (tempId != null)
+                {
+                    id = Int64.Parse(tempId);
+                }
+
+                allComments = (List<Comment>)service.GetAllRecords<Comment>();
+
+                if (type == "entry")
+                {
+                    foreach (Comment currentComment in allComments)
+                    {
+                        if (currentComment.Entry.Id == id)
+                        {
+                            returnComments.Add(currentComment);
+                        }
+                    }
+                }
+                if (type == "user")
+                {
+                    foreach (Comment currentComment in allComments)
+                    {
+                        if (currentComment.User.Id == id)
+                        {
+                            returnComments.Add(currentComment);
+                        }
+                    }
+                }
+                comments.DataSource = returnComments;
+                comments.DataBind();
+            }
         }
 
         protected void Delete_Comments(object sender, EventArgs e)
