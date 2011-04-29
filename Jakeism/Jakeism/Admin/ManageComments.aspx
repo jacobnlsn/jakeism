@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <p><a href="Default.aspx">admin panel</a> > manage comments</p>
-    <h2>Manage Entries</h2>
+    <h2>Manage Comments</h2>
 
     <br /><br />
 

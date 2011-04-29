@@ -92,6 +92,7 @@
     <Content Include="About.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\ManageComment.aspx" />
     <Content Include="Admin\ManageComments.aspx" />
     <Content Include="Admin\ManageEntries.aspx" />
     <Content Include="Admin\ManageEntry.aspx" />
@@ -194,6 +195,13 @@
     </Compile>
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageComment.aspx.cs">
+      <DependentUpon>ManageComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageComment.aspx.designer.cs">
+      <DependentUpon>ManageComment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ManageComments.aspx.cs">
       <DependentUpon>ManageComments.aspx</DependentUpon>

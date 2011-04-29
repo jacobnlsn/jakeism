@@ -29,7 +29,7 @@
     </EmptyDataTemplate>
 
     </asp:ListView>
-
+    <br />
     <asp:Button runat="server" ID="delete" Text="Delete Selected Entries" OnClick="Delete_Entries" />
 
 </asp:Content>
