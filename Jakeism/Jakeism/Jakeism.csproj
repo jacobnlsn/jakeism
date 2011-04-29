@@ -98,6 +98,7 @@
     <Content Include="Admin\ManageEntry.aspx" />
     <Content Include="Admin\ManageUsers.aspx" />
     <Content Include="CreateEntry.aspx" />
+    <Content Include="EntryList.ascx" />
     <Content Include="Error.aspx" />
     <Content Include="images\feedback.gif" />
     <Content Include="images\login.png" />
@@ -244,6 +245,13 @@
     </Compile>
     <Compile Include="CreateEntry.aspx.designer.cs">
       <DependentUpon>CreateEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EntryList.ascx.cs">
+      <DependentUpon>EntryList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EntryList.ascx.designer.cs">
+      <DependentUpon>EntryList.ascx</DependentUpon>
     </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
