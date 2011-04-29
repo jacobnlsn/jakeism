@@ -95,6 +95,8 @@ namespace Jakeism
                         SortOrder = Constants.SORT_ORDER.FAVORITES;
                     else if (order.Equals("comments", StringComparison.OrdinalIgnoreCase))
                         SortOrder = Constants.SORT_ORDER.COMMENTS;
+                    else if (order.Equals("user", StringComparison.OrdinalIgnoreCase))
+                        SortOrder = Constants.SORT_ORDER.USER;
                     else
                         SortOrder = Constants.SORT_ORDER.DATE;
                     switch (SortOrder)
@@ -110,6 +112,9 @@ namespace Jakeism
                             break;
                         case Constants.SORT_ORDER.DATE:
                             entries.DataSource = service.GetAllRecords<Entry>().OrderByDescending(n => n.Date);
+                            break;
+                        case Constants.SORT_ORDER.USER:
+                            entries.DataSource = service.GetAllRecords<Entry>().OrderByDescending(n => n.User.UserName);
                             break;
                     }
                     entries.DataBind();

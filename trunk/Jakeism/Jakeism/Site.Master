@@ -35,28 +35,6 @@
 <body>
   <form runat="server">
     <asp:ScriptManager EnablePartialRendering="true" ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <div class="slide-out-div">
-        <a class="handle" href="#" title="Send Us Your Feedback">Feedback</a>
-        <h3 class="feedback-header">We Done Goofed?</h3>
-        <p>If you have any feedback you would like to give us regarding Jakeism.info
-           or would like to report a bug, feel free to fill out the form below, and we'll
-           take a look &#8212; if we feel like it.
-        </p>
-        <asp:Panel runat="server" ID="feedback" DefaultButton="submitFeedback">
-            <asp:UpdatePanel runat="server" ID="feedbackUpdate">
-                <ContentTemplate>
-                    <br /><span class="bold">Name</span><br />
-                    <asp:TextBox runat="server" ID="name" CssClass="feedback-box" /><br />
-                    <span class="bold">Email</span><br />
-                    <asp:TextBox runat="server" ID="email" CssClass="feedback-box" /><br />
-                    <span class="bold">Feedback</span><br />
-                    <asp:TextBox runat="server" ID="feedbackMsg" TextMode="MultiLine" CssClass="feedback-box" /><br />
-                    <asp:Button runat="server" ID="submitFeedback" Text="Submit" OnClick="Submit_Feedback" />
-                    <asp:Label runat="server" ID="fail" Visible="false" />
-                </ContentTemplate>
-            </asp:UpdatePanel>
-        </asp:Panel>
-    </div>
     <div id="wrapper">
         <div id="header">
             <div id="header-left">
@@ -85,7 +63,7 @@
                         <li><a href="Default.aspx">Home</a></li>
                         <li><a href="CreateEntry.aspx">Add Jakeism</a></li>
                         <li><a href="TopEntries.aspx">Top Jakeisms</a></li>
-                        <li><span class="inactive">The Archive</span></li>
+                        <li><a href="Archive.aspx">The Archive</a></li>
                         <li><a href="ViewUsers.aspx">Users</a></li>
                     </ul>
                 </div>
@@ -109,10 +87,32 @@
                 <p>&copy; Copyright 2011 Jakeism.info. All Rights Reserved.</p> 
             </div>
             <div id="footer-right">
-                <p><a href="ViewUsers.aspx">users</a> | the archive | <a href="TopEntries.aspx">top jakeisms</a> | <a href="CreateEntry.aspx">add jakeism</a> | <a href="Default.aspx">home</a></p>
+                <p><a href="ViewUsers.aspx">users</a> | <a href="Archive.aspx">the archive</a> | <a href="TopEntries.aspx">top jakeisms</a> | <a href="CreateEntry.aspx">add jakeism</a> | <a href="Default.aspx">home</a></p>
             </div>
         </div>
         <div class="clear"></div>
+        <div class="slide-out-div">
+        <a class="handle" href="#" title="Send Us Your Feedback">Feedback</a>
+        <h3 class="feedback-header">We Done Goofed?</h3>
+        <p>If you have any feedback you would like to give us regarding Jakeism.info
+           or would like to report a bug, feel free to fill out the form below, and we'll
+           take a look &#8212; if we feel like it.
+        </p>
+        <asp:Panel runat="server" ID="feedback" DefaultButton="submitFeedback">
+            <asp:UpdatePanel runat="server" ID="feedbackUpdate">
+                <ContentTemplate>
+                    <br /><span class="bold">Name</span><br />
+                    <asp:TextBox runat="server" ID="name" CssClass="feedback-box" /><br />
+                    <span class="bold">Email</span><br />
+                    <asp:TextBox runat="server" ID="email" CssClass="feedback-box" /><br />
+                    <span class="bold">Feedback</span><br />
+                    <asp:TextBox runat="server" ID="feedbackMsg" TextMode="MultiLine" CssClass="feedback-box" /><br />
+                    <asp:Button runat="server" ID="submitFeedback" Text="Submit" OnClick="Submit_Feedback" />
+                    <asp:Label runat="server" ID="fail" Visible="false" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </asp:Panel>
+    </div>
     </div>
   </form>
 </body>

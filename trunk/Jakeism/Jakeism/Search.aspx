@@ -7,7 +7,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Search Results</h2>
+    <h2>Search Results</h2><br />
 
     <custom:EntryList runat="server" ID="entryList" />
 
