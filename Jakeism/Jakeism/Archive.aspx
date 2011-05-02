@@ -9,18 +9,21 @@
    <div class="left">
        <h2>The Archive</h2>
    </div>
-   <div class="right">
-       Sort By: 
-       <asp:DropDownList runat="server" ID="sortList" OnSelectedIndexChanged="Sort_Changing" AutoPostBack="true">
-           <asp:ListItem Selected="True" Text="Date" Value="Date" />
-           <asp:ListItem Text="Votes" Value="Votes" />
-           <asp:ListItem Text="Favorites" Value="Favorites" />
-           <asp:ListItem Text="Comments" Value="Comments" />
-           <asp:ListItem Text="User" Value="User" />
-       </asp:DropDownList>
-   </div>
-   <div class="left">
-       <custom:EntryList runat="server" ID="entryList" />
-    </div>
-
+   <asp:UpdatePanel runat="server" ID="archivePanel">
+       <ContentTemplate>
+           <div class="right">
+               Sort By: 
+               <asp:DropDownList runat="server" ID="sortList" OnSelectedIndexChanged="Sort_Changing" AutoPostBack="true">
+                   <asp:ListItem Selected="True" Text="Date" Value="Date" />
+                   <asp:ListItem Text="Votes" Value="Votes" />
+                   <asp:ListItem Text="Favorites" Value="Favorites" />
+                   <asp:ListItem Text="Comments" Value="Comments" />
+                   <asp:ListItem Text="User" Value="User" />
+               </asp:DropDownList>
+           </div>
+           <div class="left">
+               <custom:EntryList runat="server" ID="entryList" />  
+           </div>
+       </ContentTemplate>
+   </asp:UpdatePanel>
 </asp:Content>
