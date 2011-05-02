@@ -13,6 +13,15 @@ namespace Jakeism {
     public partial class Archive {
         
         /// <summary>
+        /// archivePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel archivePanel;
+        
+        /// <summary>
         /// sortList control.
         /// </summary>
         /// <remarks>
