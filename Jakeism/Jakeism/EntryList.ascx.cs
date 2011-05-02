@@ -114,7 +114,7 @@ namespace Jakeism
                             entries.DataSource = service.GetAllRecords<Entry>().OrderByDescending(n => n.Date);
                             break;
                         case Constants.SORT_ORDER.USER:
-                            entries.DataSource = service.GetAllRecords<Entry>().OrderByDescending(n => n.User.UserName);
+                            entries.DataSource = service.GetAllRecords<Entry>().OrderBy(n => n.User.UserName);
                             break;
                     }
                     entries.DataBind();
