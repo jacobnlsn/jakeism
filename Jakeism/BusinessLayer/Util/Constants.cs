@@ -30,5 +30,7 @@ namespace BusinessLayer.Util
 
         // UI
         public enum SORT_ORDER { VOTES, FAVORITES, COMMENTS, DATE, USER };
+        public const int PAGE_SIZE = 15;
+        public const int PAGINATION_SIZE = 25;
     }
 }

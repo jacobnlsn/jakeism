@@ -14,11 +14,11 @@
            <div class="right">
                Sort By: 
                <asp:DropDownList runat="server" ID="sortList" OnSelectedIndexChanged="Sort_Changing" AutoPostBack="true">
-                   <asp:ListItem Selected="True" Text="Date" Value="Date" />
-                   <asp:ListItem Text="Votes" Value="Votes" />
-                   <asp:ListItem Text="Favorites" Value="Favorites" />
-                   <asp:ListItem Text="Comments" Value="Comments" />
-                   <asp:ListItem Text="User" Value="User" />
+                   <asp:ListItem Selected="True" Text="date" Value="Date" />
+                   <asp:ListItem Text="votes" Value="Votes" />
+                   <asp:ListItem Text="favorites" Value="Favorites" />
+                   <asp:ListItem Text="comments" Value="Comments" />
+                   <asp:ListItem Text="user" Value="User" />
                </asp:DropDownList>
            </div>
            <div class="left">

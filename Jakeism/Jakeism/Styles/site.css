@@ -13,9 +13,9 @@ body {
 	text-align: center;
     margin: 0px auto;
 	padding: 0px;
-	-moz-box-shadow: 0 0 5px #666;
-	-webkit-box-shadow: 0 0 5px #666;
-	box-shadow: 0 0 5px #666;
+	-moz-box-shadow: 0 0 5px #000000;
+	-webkit-box-shadow: 0 0 5px #000000;
+	box-shadow: 0 0 5px #000000;
 }
 
 .clear {
@@ -570,6 +570,29 @@ UL.tabNavigation LI A:focus {
 
 #favorites-tab a:hover {
     color: #9099c8;
+}
+
+.pagination {
+    margin: auto;
+    text-align: center;
+}
+
+.pagination a {
+    padding: 5px;
+    background: #616ba1;
+    border: solid 1px #000000;
+    color: #FFFFFF;
+    margin: 0 2px 0 2px;
+    text-decoration: none;
+}
+
+.pagination a:hover  {
+    background: #aaafcc;
+}
+
+a.selected {
+    font-weight: bold;
+    background: #5d5d5d;
 }
 
 /* Footer */
