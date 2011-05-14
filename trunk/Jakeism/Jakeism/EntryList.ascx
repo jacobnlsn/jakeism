@@ -48,12 +48,16 @@
     <EmptyDataTemplate>
         <% if (IsSearch)
            { %>
-            <div><p>Sorry, your search for "<span class="bold"><%= Query%></span>" returned no results.</p></div>
+            <div><p>Sorry, your search for "<span class="bold"><%= Query %></span>" returned no results.</p></div>
         <% }
            else
            { %>
-            <div><p>No entries</p></div>
+
         <% } %>
     </EmptyDataTemplate>
 
 </asp:ListView>
+
+<div class="pagination">
+    <% PrintPagination(); %>
+</div>
