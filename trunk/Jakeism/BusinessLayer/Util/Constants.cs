@@ -8,8 +8,8 @@ namespace BusinessLayer.Util
     public class Constants
     {
         // Tiers
-        public const int TIER_ONE = 10;
-        public const int TIER_TWO = 20;
+        public const int TIER_ONE = 5;
+        public const int TIER_TWO = 10;
 
         // Email
         public const string SMTP_SERVER = "mail.clarionmediadev.com";
@@ -27,6 +27,7 @@ namespace BusinessLayer.Util
         // Time
         public const double YEAR_IN_DAYS = 365.2425;
         public const double MONTH_IN_DAYS = 30.436875;
+        public const int HOUR_OFFSET = 2;
 
         // UI
         public enum SORT_ORDER { VOTES, FAVORITES, COMMENTS, DATE, USER };
