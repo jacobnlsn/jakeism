@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BusinessLayer.Util;
 
 namespace BusinessLayer.Domain
 {
@@ -51,7 +52,7 @@ namespace BusinessLayer.Domain
 
         public virtual string FormattedTime
         {
-            get { return this.date.ToString("h:mm tt"); }
+            get { return this.date.AddHours(Constants.HOUR_OFFSET).ToString("h:mm tt"); }
         }
 
     }
