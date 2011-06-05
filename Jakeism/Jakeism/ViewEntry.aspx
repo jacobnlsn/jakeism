@@ -49,47 +49,42 @@
 
     <br />
 
-    <asp:UpdatePanel runat="server" ID="commentsPanel">
-        <ContentTemplate>
-            <h3 id="comments"><asp:Label runat="server" ID="commentslbl" /></h3>
-            <asp:ListView runat="server" ID="commentsList">
+    <h3 id="comments"><asp:Label runat="server" ID="commentslbl" /></h3>
+    <asp:ListView runat="server" ID="commentsList">
         
-                <LayoutTemplate>
-                    <div id="comments-wrapper">
-                        <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
-                    </div>
-                </LayoutTemplate>
+        <LayoutTemplate>
+            <div id="comments-wrapper">
+                <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
+            </div>
+        </LayoutTemplate>
 
-                <ItemTemplate>
-                    <%# (bool)Eval("User.IsAdmin") && BusinessLayer.Util.Constants.ADMIN_COMMENTS ? "<div class='comment comment-admin'>" : "<div class='comment'>" %>
-                      <div class="comment-body">
-                        <p><%# Eval("CommentBody") %></p>
-                      </div>
-                        <div class="comment-meta">
-                            <a id="A1" runat='server' title='View User' href='<%# String.Format("ViewUser.aspx?id={0}", Eval("User.Id")) %>'><%# Eval("User.UserName") %></a> on <a href="#comment-<%# Eval("Id") %>" id="#comment-<%# Eval("Id") %>"><%# Eval("FormattedDate") %></a> at <%# Eval("FormattedTime") %>
-                        </div>
-                    </div>
-                </ItemTemplate>
+        <ItemTemplate>
+            <%# (bool)Eval("User.IsAdmin") && BusinessLayer.Util.Constants.ADMIN_COMMENTS ? "<div class='comment comment-admin'>" : "<div class='comment'>" %>
+                <div class="comment-body">
+                <p><%# Eval("CommentBody") %></p>
+                </div>
+                <div class="comment-meta">
+                    <a id="A1" runat='server' title='View User' href='<%# String.Format("ViewUser.aspx?id={0}", Eval("User.Id")) %>'><%# Eval("User.UserName") %></a> on <a href="#comment-<%# Eval("Id") %>" id="#comment-<%# Eval("Id") %>"><%# Eval("FormattedDate") %></a> at <%# Eval("FormattedTime") %>
+                </div>
+            </div>
+        </ItemTemplate>
 
-                <AlternatingItemTemplate>
-                    <%# (bool)Eval("User.IsAdmin") && BusinessLayer.Util.Constants.ADMIN_COMMENTS ? "<div class='comment-alt comment-admin'>" : "<div class='comment-alt'>"%>
-                      <div class="comment-body">
-                        <p><%# Eval("CommentBody") %></p>
-                      </div>
-                        <div class="comment-meta">
-                            <a id="A1" runat='server' title='View User' href='<%# String.Format("ViewUser.aspx?id={0}", Eval("User.Id")) %>'><%# Eval("User.UserName") %></a> on <a href="#comment-<%# Eval("Id") %>" id="#comment-<%# Eval("Id") %>"><%# Eval("FormattedDate") %></a> at <%# Eval("FormattedTime") %>
-                        </div>
-                    </div>
-                </AlternatingItemTemplate>
+        <AlternatingItemTemplate>
+            <%# (bool)Eval("User.IsAdmin") && BusinessLayer.Util.Constants.ADMIN_COMMENTS ? "<div class='comment-alt comment-admin'>" : "<div class='comment-alt'>"%>
+                <div class="comment-body">
+                <p><%# Eval("CommentBody") %></p>
+                </div>
+                <div class="comment-meta">
+                    <a id="A1" runat='server' title='View User' href='<%# String.Format("ViewUser.aspx?id={0}", Eval("User.Id")) %>'><%# Eval("User.UserName") %></a> on <a href="#comment-<%# Eval("Id") %>" id="#comment-<%# Eval("Id") %>"><%# Eval("FormattedDate") %></a> at <%# Eval("FormattedTime") %>
+                </div>
+            </div>
+        </AlternatingItemTemplate>
 
-                <EmptyDataTemplate>
-                    <div>No comments</div>
-                </EmptyDataTemplate>
+        <EmptyDataTemplate>
+            <div>No comments</div>
+        </EmptyDataTemplate>
 
-            </asp:ListView>
-
-        </ContentTemplate>
-    </asp:UpdatePanel>
+    </asp:ListView>
 
     <br />
 
