@@ -161,25 +161,8 @@ namespace Jakeism.Entries
                 comment.User = user;
                 entry.Comments.Add(comment);
                 service.Save(comment);
-                var data = service.GetCommentsByEntry(entry);
-                commentsList.DataSource = data;
-                commentsList.DataBind();
-                if (data.Count > 0)
-                    commentslbl.Text = "Comments (" + data.Count + ")";
-                commentBox.Text = "";
-                BindCommentData();
             }
-        }
-
-        private void BindCommentData()
-        {
-            using (var service = new HibernateService())
-            {
-                var entry = service.FindById<Entry>(Id);
-                var data = service.GetCommentsByEntry(entry);
-                commentsList.DataSource = data;
-                commentsList.DataBind();
-            }
+            Response.Redirect(Request.Url.AbsoluteUri);
         }
     }
 }
